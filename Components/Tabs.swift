@@ -10,11 +10,6 @@ import SwiftUI
 struct Tabs: View {
     var body: some View {
         TabView {
-            Text("Home")
-                .tabItem {
-                    Image(systemName: "lizard")
-                    Text("Home")
-                }
             Text("History")
                 .tabItem {
                     Image(systemName: "clock")

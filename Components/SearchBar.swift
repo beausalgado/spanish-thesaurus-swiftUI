@@ -16,13 +16,13 @@ struct SearchBar: View {
 
             Image(systemName: "magnifyingglass")
                 .foregroundColor(
-                    searchText.isEmpty ? .red : .blue
+                    searchText.isEmpty ? .black.opacity(0.4) : .black.opacity(0.8)
                 )
 
                 .animation(.default, value: searchText)
             
             TextField("Search for a word", text: $searchText)
-                .foregroundColor(.red)
+                .foregroundColor(.black)
                 .disableAutocorrection(true)
                 .overlay(
                 Image(systemName: "xmark")
@@ -45,7 +45,7 @@ struct SearchBar: View {
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 25)
-                .fill(.cyan).opacity(0.2)
+                .fill(.pink).opacity(0.1)
                 .shadow(
                     color: .black,
                     radius: 10, x: 0, y: 0)

@@ -10,22 +10,23 @@ import SwiftUI
 struct HomeView: View {
     @State var searchText: String = ""
     var body: some View {
-
         VStack {
-            
-        
-            SearchBar(searchText: $searchText)
-                
 
-                Image(systemName: "globe")
-                
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("Hello, world!")
-            Tabs()
+            HStack {
+                Image("brontosaurus")
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .padding()
+                    .opacity(0.6)
+                SearchBar(searchText: $searchText)
+                   
+                Image(systemName: "line.3.horizontal")
+
 
         }
+            Spacer(minLength: 0)
+            
+            }
             
         
  
