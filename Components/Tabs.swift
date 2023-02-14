@@ -8,23 +8,32 @@
 import SwiftUI
 
 struct Tabs: View {
+    
+    @State var selectedTab: Int = 0
+    
     var body: some View {
-        TabView {
-            Text("History")
+    
+
+        TabView(selection: $selectedTab){
+            Home()
                 .tabItem {
-                    Image(systemName: "clock")
-                    Text("History")
+                    Image(systemName: "house")
+                    Text("Home")
                 }
-            Text("Favorites")
+                .tag(0)
+
+            Favorites()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Favorites")
                 }
-            Text("Search")
+                .tag(1)
+            Search()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
+                .tag(2)
 
         }
     }

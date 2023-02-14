@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00362DC8298847AB00BFD114 /* SplashViewOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00362DC7298847AB00BFD114 /* SplashViewOld.swift */; };
+		00362DCB2988482300BFD114 /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00362DC92988482300BFD114 /* Nunito-VariableFont_wght.ttf */; };
+		00362DCC2988482300BFD114 /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00362DCA2988482300BFD114 /* Nunito-Italic-VariableFont_wght.ttf */; };
+		00466C4729842AC400D8DBDC /* sheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00466C4629842AC400D8DBDC /* sheetView.swift */; };
+		00466C49298436C700D8DBDC /* SearchRecents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00466C48298436C700D8DBDC /* SearchRecents.swift */; };
+		0047687A29899A52006A5128 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047687929899A52006A5128 /* SplashView.swift */; };
+		004768802989A97B006A5128 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047687F2989A97B006A5128 /* Home.swift */; };
+		004768822989AC9D006A5128 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004768812989AC9D006A5128 /* Search.swift */; };
+		004C8AC12993FD7C0069D1F9 /* offset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004C8AC02993FD7C0069D1F9 /* offset.swift */; };
+		004C8AE12995457B0069D1F9 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004C8AE02995457B0069D1F9 /* Favorites.swift */; };
 		00CDF8CE295E3D0300171947 /* spanish_thesaurus_swiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CDF8CD295E3D0300171947 /* spanish_thesaurus_swiftUIApp.swift */; };
 		00CDF8D0295E3D0300171947 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CDF8CF295E3D0300171947 /* HomeView.swift */; };
 		00CDF8D2295E3D0500171947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CDF8D1295E3D0500171947 /* Assets.xcassets */; };
@@ -14,9 +24,22 @@
 		00CDF8DD295E3D1E00171947 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CDF8DC295E3D1E00171947 /* SearchBar.swift */; };
 		00CDF8DF295E3D6500171947 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CDF8DE295E3D6500171947 /* Tabs.swift */; };
 		00CDF8E2295E3DE100171947 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CDF8E1295E3DE100171947 /* HideKeyboard.swift */; };
+		00E35EBF299BDB8E00C052D8 /* EntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E35EBE299BDB8E00C052D8 /* EntryModel.swift */; };
+		00E35EC2299BDD4A00C052D8 /* EntryDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E35EC1299BDD4A00C052D8 /* EntryDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00362DC7298847AB00BFD114 /* SplashViewOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewOld.swift; sourceTree = "<group>"; };
+		00362DC92988482300BFD114 /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		00362DCA2988482300BFD114 /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		00362DEE29884A5500BFD114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		00466C4629842AC400D8DBDC /* sheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sheetView.swift; sourceTree = "<group>"; };
+		00466C48298436C700D8DBDC /* SearchRecents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecents.swift; sourceTree = "<group>"; };
+		0047687929899A52006A5128 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		0047687F2989A97B006A5128 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		004768812989AC9D006A5128 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		004C8AC02993FD7C0069D1F9 /* offset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offset.swift; sourceTree = "<group>"; };
+		004C8AE02995457B0069D1F9 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		00CDF8CA295E3D0300171947 /* spanish-thesaurus-swiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "spanish-thesaurus-swiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CDF8CD295E3D0300171947 /* spanish_thesaurus_swiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spanish_thesaurus_swiftUIApp.swift; sourceTree = "<group>"; };
 		00CDF8CF295E3D0300171947 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -25,6 +48,8 @@
 		00CDF8DC295E3D1E00171947 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		00CDF8DE295E3D6500171947 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		00CDF8E1295E3DE100171947 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
+		00E35EBE299BDB8E00C052D8 /* EntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryModel.swift; sourceTree = "<group>"; };
+		00E35EC1299BDD4A00C052D8 /* EntryDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,9 +63,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00362DED2988499900BFD114 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				00362DCA2988482300BFD114 /* Nunito-Italic-VariableFont_wght.ttf */,
+				00362DC92988482300BFD114 /* Nunito-VariableFont_wght.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0047687D2989A757006A5128 /* Discards */ = {
+			isa = PBXGroup;
+			children = (
+				00362DC7298847AB00BFD114 /* SplashViewOld.swift */,
+			);
+			path = Discards;
+			sourceTree = "<group>";
+		};
+		0047687E2989A93E006A5128 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0047687929899A52006A5128 /* SplashView.swift */,
+				004C8AE02995457B0069D1F9 /* Favorites.swift */,
+				0047687F2989A97B006A5128 /* Home.swift */,
+				004768812989AC9D006A5128 /* Search.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		004C8AE229954B9F0069D1F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				00E35EBE299BDB8E00C052D8 /* EntryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		00CDF8C1295E3D0300171947 = {
 			isa = PBXGroup;
 			children = (
+				00E35EC0299BDD0400C052D8 /* Services */,
+				004C8AE229954B9F0069D1F9 /* Models */,
+				0047687E2989A93E006A5128 /* Views */,
 				00CDF8E0295E3DBB00171947 /* Extensions */,
 				00CDF8DB295E3D0D00171947 /* Components */,
 				00CDF8CC295E3D0300171947 /* spanish-thesaurus-swiftUI */,
@@ -59,10 +123,13 @@
 		00CDF8CC295E3D0300171947 /* spanish-thesaurus-swiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				00362DEE29884A5500BFD114 /* Info.plist */,
 				00CDF8CD295E3D0300171947 /* spanish_thesaurus_swiftUIApp.swift */,
 				00CDF8CF295E3D0300171947 /* HomeView.swift */,
+				0047687D2989A757006A5128 /* Discards */,
 				00CDF8D1295E3D0500171947 /* Assets.xcassets */,
 				00CDF8D3295E3D0500171947 /* Preview Content */,
+				00362DED2988499900BFD114 /* Fonts */,
 			);
 			path = "spanish-thesaurus-swiftUI";
 			sourceTree = "<group>";
@@ -80,6 +147,9 @@
 			children = (
 				00CDF8DC295E3D1E00171947 /* SearchBar.swift */,
 				00CDF8DE295E3D6500171947 /* Tabs.swift */,
+				00466C4629842AC400D8DBDC /* sheetView.swift */,
+				00466C48298436C700D8DBDC /* SearchRecents.swift */,
+				004C8AC02993FD7C0069D1F9 /* offset.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -90,6 +160,14 @@
 				00CDF8E1295E3DE100171947 /* HideKeyboard.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		00E35EC0299BDD0400C052D8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				00E35EC1299BDD4A00C052D8 /* EntryDataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +229,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CDF8D5295E3D0500171947 /* Preview Assets.xcassets in Resources */,
+				00362DCB2988482300BFD114 /* Nunito-VariableFont_wght.ttf in Resources */,
+				00362DCC2988482300BFD114 /* Nunito-Italic-VariableFont_wght.ttf in Resources */,
 				00CDF8D2295E3D0500171947 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,11 +242,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				004768822989AC9D006A5128 /* Search.swift in Sources */,
+				0047687A29899A52006A5128 /* SplashView.swift in Sources */,
+				004C8AC12993FD7C0069D1F9 /* offset.swift in Sources */,
+				00E35EC2299BDD4A00C052D8 /* EntryDataService.swift in Sources */,
 				00CDF8E2295E3DE100171947 /* HideKeyboard.swift in Sources */,
+				004768802989A97B006A5128 /* Home.swift in Sources */,
+				00362DC8298847AB00BFD114 /* SplashViewOld.swift in Sources */,
 				00CDF8D0295E3D0300171947 /* HomeView.swift in Sources */,
 				00CDF8CE295E3D0300171947 /* spanish_thesaurus_swiftUIApp.swift in Sources */,
+				00E35EBF299BDB8E00C052D8 /* EntryModel.swift in Sources */,
 				00CDF8DD295E3D1E00171947 /* SearchBar.swift in Sources */,
+				00466C4729842AC400D8DBDC /* sheetView.swift in Sources */,
+				00466C49298436C700D8DBDC /* SearchRecents.swift in Sources */,
 				00CDF8DF295E3D6500171947 /* Tabs.swift in Sources */,
+				004C8AE12995457B0069D1F9 /* Favorites.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,9 +388,11 @@
 				DEVELOPMENT_TEAM = 3C8F2SX887;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "spanish-thesaurus-swiftUI/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = " ";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -327,9 +419,11 @@
 				DEVELOPMENT_TEAM = 3C8F2SX887;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "spanish-thesaurus-swiftUI/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = " ";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
