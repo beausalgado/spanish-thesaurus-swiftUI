@@ -51,7 +51,7 @@ struct Home: View {
                     Text("Avivar, excitar, estimular, activar, remover, azuzar, aguijonear...")
                         .font(.custom("Nunito", size: 16, relativeTo: .body))
                     Spacer()
-                }.padding()
+                }.padding( )
             
 
             }.frame(width: 350, height: 160)

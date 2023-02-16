@@ -8,17 +8,25 @@
 import SwiftUI
 
 struct Favorites: View {
-    // let entry: EntryModel
+    @EnvironmentObject private var vm:HomeViewModel
     var body: some View {
         VStack {
-            Text("Hello")
-            Text("ga")
+            List {
+                ForEach(vm.allEntries) { entry in
+                    EntryRowView(entry: entry)
+                }
+            }.listStyle(PlainListStyle())
         }
     }
+
 }
 
 struct Favorites_Previews: PreviewProvider {
     static var previews: some View {
-        Favorites()
+        NavigationView {
+            Favorites()
+                .navigationBarHidden(true)
+        }
+        .environmentObject(dev.homeVM)
     }
 }

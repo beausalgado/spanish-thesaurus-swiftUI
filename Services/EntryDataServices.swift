@@ -6,19 +6,21 @@
 //
 
 import Foundation
-
+import Combine
 
 class EntryDataServices {
     @Published var allEntries: [EntryModel] = []
     
+    var entrySubscription: AnyCancellable?
     init(){
         getEntries()
     }
     
     private func getEntries() {
-        guard let url = URL(string: "http://localhost:8080/entries") else {return}
+        guard let url = URL(string: "http://localhost:8080/entries")
+        else {return}
         
-        URLSession.shared.dataTaskPublisher(for: url)
+        entrySubscription = URLSession.shared.dataTaskPublisher(for: url)
             .subscribe(on: DispatchQueue.global(qos: .default))
             .tryMap { (output) -> Data in
                 guard let response = output.response as? HTTPURLResponse,
@@ -30,7 +32,15 @@ class EntryDataServices {
             .receive(on:DispatchQueue.main)
             .decode(type: [EntryModel].self , decoder: JSONDecoder())
             .sink { (completion) in
-                switch completion
-            }
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            } receiveValue: { [weak self] (returnedEntries) in
+        self?.allEntries = returnedEntries
+                self?.entrySubscription?.cancel()
+    }
     }
 }

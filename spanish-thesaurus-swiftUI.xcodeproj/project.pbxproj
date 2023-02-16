@@ -17,6 +17,9 @@
 		004768822989AC9D006A5128 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004768812989AC9D006A5128 /* Search.swift */; };
 		004C8AC12993FD7C0069D1F9 /* offset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004C8AC02993FD7C0069D1F9 /* offset.swift */; };
 		004C8AE12995457B0069D1F9 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004C8AE02995457B0069D1F9 /* Favorites.swift */; };
+		005C6C7A299E9780009D9362 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005C6C79299E9780009D9362 /* HomeViewModel.swift */; };
+		005C6C7C299E99DE009D9362 /* EntryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005C6C7B299E99DE009D9362 /* EntryRowView.swift */; };
+		005C6C7E299E9A20009D9362 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005C6C7D299E9A20009D9362 /* PreviewProvider.swift */; };
 		00CDF8CE295E3D0300171947 /* spanish_thesaurus_swiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CDF8CD295E3D0300171947 /* spanish_thesaurus_swiftUIApp.swift */; };
 		00CDF8D0295E3D0300171947 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CDF8CF295E3D0300171947 /* HomeView.swift */; };
 		00CDF8D2295E3D0500171947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CDF8D1295E3D0500171947 /* Assets.xcassets */; };
@@ -25,7 +28,7 @@
 		00CDF8DF295E3D6500171947 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CDF8DE295E3D6500171947 /* Tabs.swift */; };
 		00CDF8E2295E3DE100171947 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CDF8E1295E3DE100171947 /* HideKeyboard.swift */; };
 		00E35EBF299BDB8E00C052D8 /* EntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E35EBE299BDB8E00C052D8 /* EntryModel.swift */; };
-		00E35EC2299BDD4A00C052D8 /* EntryDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E35EC1299BDD4A00C052D8 /* EntryDataService.swift */; };
+		00E35EC2299BDD4A00C052D8 /* EntryDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E35EC1299BDD4A00C052D8 /* EntryDataServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		004768812989AC9D006A5128 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		004C8AC02993FD7C0069D1F9 /* offset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offset.swift; sourceTree = "<group>"; };
 		004C8AE02995457B0069D1F9 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		005C6C79299E9780009D9362 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		005C6C7B299E99DE009D9362 /* EntryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryRowView.swift; sourceTree = "<group>"; };
+		005C6C7D299E9A20009D9362 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		00CDF8CA295E3D0300171947 /* spanish-thesaurus-swiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "spanish-thesaurus-swiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CDF8CD295E3D0300171947 /* spanish_thesaurus_swiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spanish_thesaurus_swiftUIApp.swift; sourceTree = "<group>"; };
 		00CDF8CF295E3D0300171947 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -49,7 +55,7 @@
 		00CDF8DE295E3D6500171947 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		00CDF8E1295E3DE100171947 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		00E35EBE299BDB8E00C052D8 /* EntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryModel.swift; sourceTree = "<group>"; };
-		00E35EC1299BDD4A00C052D8 /* EntryDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDataService.swift; sourceTree = "<group>"; };
+		00E35EC1299BDD4A00C052D8 /* EntryDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDataServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,8 @@
 				0047687929899A52006A5128 /* SplashView.swift */,
 				004C8AE02995457B0069D1F9 /* Favorites.swift */,
 				0047687F2989A97B006A5128 /* Home.swift */,
+				005C6C79299E9780009D9362 /* HomeViewModel.swift */,
+				005C6C7B299E99DE009D9362 /* EntryRowView.swift */,
 				004768812989AC9D006A5128 /* Search.swift */,
 			);
 			path = Views;
@@ -158,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				00CDF8E1295E3DE100171947 /* HideKeyboard.swift */,
+				005C6C7D299E9A20009D9362 /* PreviewProvider.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -165,7 +174,7 @@
 		00E35EC0299BDD0400C052D8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				00E35EC1299BDD4A00C052D8 /* EntryDataService.swift */,
+				00E35EC1299BDD4A00C052D8 /* EntryDataServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -245,9 +254,12 @@
 				004768822989AC9D006A5128 /* Search.swift in Sources */,
 				0047687A29899A52006A5128 /* SplashView.swift in Sources */,
 				004C8AC12993FD7C0069D1F9 /* offset.swift in Sources */,
-				00E35EC2299BDD4A00C052D8 /* EntryDataService.swift in Sources */,
+				005C6C7A299E9780009D9362 /* HomeViewModel.swift in Sources */,
+				00E35EC2299BDD4A00C052D8 /* EntryDataServices.swift in Sources */,
 				00CDF8E2295E3DE100171947 /* HideKeyboard.swift in Sources */,
 				004768802989A97B006A5128 /* Home.swift in Sources */,
+				005C6C7E299E9A20009D9362 /* PreviewProvider.swift in Sources */,
+				005C6C7C299E99DE009D9362 /* EntryRowView.swift in Sources */,
 				00362DC8298847AB00BFD114 /* SplashViewOld.swift in Sources */,
 				00CDF8D0295E3D0300171947 /* HomeView.swift in Sources */,
 				00CDF8CE295E3D0300171947 /* spanish_thesaurus_swiftUIApp.swift in Sources */,

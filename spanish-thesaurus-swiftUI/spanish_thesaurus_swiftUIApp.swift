@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct spanish_thesaurus_swiftUIApp: App {
+    @StateObject private var vm = HomeViewModel()
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            NavigationView {
+                HomeView()
+                    .navigationBarHidden(true)
+            }
+            .environmentObject(vm)
         }
     }
 }
