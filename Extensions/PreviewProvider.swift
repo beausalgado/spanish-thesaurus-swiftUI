@@ -17,20 +17,79 @@ extension PreviewProvider {
 }
 
 class DeveloperPreview {
-    
-    static let instance = DeveloperPreview()
-    private init() { }
+ 
+
+    static var instance: DeveloperPreview {
+        return DeveloperPreview()
+     }
+    init (){}
     
     let homeVM = HomeViewModel()
+    let wordVM = test1ViewModel(string1: "abadejo")
+
+    
     
     let entry = EntryModel(
-        id: "63ea9b2da538bfd8b38176e3",
-        entry: "abadejo",
-        meaning1: Meaning1(synonyms: [
-        "test1",
-        "test2",
-        "test3"
+        id: "63ea9b2da538bfd8b38176e7",
+        entry: "abajadero",
+        meanings: [Meaning(
+            synonyms: [
+                "bajada",
+                "pendiente",
+                "cuesta",
+                "declive",
+                "bajada",
+                "pendiente",
+                "bajada",
+                "pendiente"
+            ],
+            idioms: [
+                "bajada por la calle",
+                "pendiente a marte",
+                "cuesta al lado",
+                "declive por el monte"
+            ],
+            americanisms: [
+                "hey ho (amer.)",
+                "water in the hole (amer.)",
+                "make it fair (amer.)",
+                "bla bla bla (amer.)"
+            ],
+            antonyms: [
+                "bajada",
+                "pendiente",
+                "cuesta",
+                "declive"
+            ]),
+                   Meaning(
+                       synonyms: [
+                           "bajada2",
+                           "pendiente2",
+                           "cuesta2",
+                           "declive2"
+                       ],
+                       idioms: [
+                           "bajada por la calle2",
+                           "pendiente a marte2",
+                           "cuesta al lado2",
+                           "declive por el monte2"
+                       ],
+                       americanisms: [
+                           "hey ho2",
+                           "water in the hole2",
+                           "make it fair2",
+                           "bla bla bla2"
+                       ],
+                       antonyms: [
+                           "bajada2",
+                           "pendiente2",
+                           "cuesta2",
+                           "declive2"
+                       ])
+        
+        
+        
         ])
-    )
+    
     
 }

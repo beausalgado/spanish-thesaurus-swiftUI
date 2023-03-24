@@ -19,8 +19,7 @@ struct sheetView: View {
                 Capsule()
                      .fill(Color.white)
                      .frame(width: 38, height: 4)
-                     .padding([.top], 8)
-                     .padding([.bottom], 40)
+                     .padding([.bottom], 20)
                 
                     Toggle(isOn: $offline,
                            label: {

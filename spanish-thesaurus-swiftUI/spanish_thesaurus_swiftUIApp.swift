@@ -11,12 +11,16 @@ import SwiftUI
 struct spanish_thesaurus_swiftUIApp: App {
     @StateObject private var vm = HomeViewModel()
     var body: some Scene {
+
         WindowGroup {
-            NavigationView {
+
                 HomeView()
-                    .navigationBarHidden(true)
-            }
+
             .environmentObject(vm)
         }
+        
+//        WindowGroup {
+//            Search()
+//        }
     }
 }

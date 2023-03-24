@@ -10,6 +10,7 @@ import SwiftUI
 struct Tabs: View {
     
     @State var selectedTab: Int = 0
+    @State var clicked = true
     
     var body: some View {
     
@@ -21,6 +22,7 @@ struct Tabs: View {
                     Text("Home")
                 }
                 .tag(0)
+
 
             Favorites()
                 .tabItem {
@@ -35,7 +37,9 @@ struct Tabs: View {
                 }
                 .tag(2)
 
-        }
+        }.accentColor(.black)
+            .animation(.easeOut(duration: 0.2), value: selectedTab)
+
     }
 }
 struct SouthTabs_Previews: PreviewProvider {

@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct SearchBar: View {
-    @Binding var searchText: String
-    @Binding  var isEditing: Bool
-    @FocusState var focusedField: Bool
+    @State var searchText: String = ""
+    @State  var isEditing: Bool = false
+    @State var showFuzzyResults: Bool = false
+    @FocusState var isFocused: Bool
     var body: some View {
         VStack {
             HStack {
@@ -27,28 +28,25 @@ struct SearchBar: View {
                         withAnimation(.default) {
                             self.isEditing = isEditing
                         }
+                    }, onCommit: {
+                        withAnimation {
+                            isEditing = false
+                        }
                     })
-                    .focused($focusedField)
+                    .focused($isFocused)
                     .font(.custom("Nunito", size: 16))
                     .fontWeight(.semibold)
                     .foregroundColor(.black)
                     .disableAutocorrection(true)
-                    .overlay(
-                        Image(systemName: "xmark")
-                            .padding(20)
-                            .offset(x: 10)
-                            .padding(.trailing, 10)
-                            .foregroundColor(.purple)
-                            .opacity(searchText.isEmpty ? 0.0 : 1.0)
-                            .animation(.default, value: searchText)
-                            .onTapGesture {
-                            UIApplication.shared.endEditing()
-                                searchText = ""
-                                
+                    .onChange(of: searchText) { _ in
+                        
+                        if searchText != "" {
+                            withAnimation {
+                                showFuzzyResults = true
                             }
-                        ,alignment: .trailing
-                    )
-                    
+                        }
+
+                    }
                 }
                 .frame(maxWidth: .infinity)
                 .frame(height: 18)
@@ -63,16 +61,22 @@ struct SearchBar: View {
                 if isEditing {
                     Button("Cancelar") {
                         withAnimation(.default) {
+                            searchText = ""
+                            isFocused = false
                             isEditing = false
-                            focusedField = false
+                            showFuzzyResults = false
                         }
+//                        .onTapGesture {
+//                            UIApplication.shared.endEditing()
+//                                searchText = ""
+//
+//                            }
                     }
-                    .foregroundColor(Color("sheet"))
-                    .font(.custom("Nunito", size: 16))
+                    .foregroundColor(.red)
                     .fontWeight(.semibold)
                     .padding(.horizontal, 5)
                     .transition(.move(edge: .trailing))
-                    .animation(.default, value: isEditing)
+                    //.animation(.default, value: isEditing)
                 }
                 
                 
@@ -84,7 +88,7 @@ struct SearchBar: View {
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(searchText: .constant(""), isEditing: .constant(true))
+        SearchBar()
         
     }
 }

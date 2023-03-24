@@ -10,16 +10,15 @@ import Combine
 
 class HomeViewModel: ObservableObject {
     @Published var allEntries: [EntryModel] = []
-    @Published var portfolioEntries: [EntryModel] = []
-    private let dataService = EntryDataServices()
+    private let dataService = EntriesDataServices()
     
     private var cancellables = Set<AnyCancellable>()
 
     init() {
-        addSubscribers()
+        addSubscribers1()
     }
     
-    func addSubscribers() {
+    func addSubscribers1() {
         dataService.$allEntries
             .sink { [weak self] (returnedEntries) in
                 self?.allEntries = returnedEntries
