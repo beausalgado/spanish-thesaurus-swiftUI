@@ -25,7 +25,7 @@ import Foundation
 
 
 // MARK: - Entry
-struct EntryModel: Identifiable, Codable {
+struct EntryModel: Identifiable, Codable, Hashable {
     let id, entry: String
     let meanings: [Meaning]
     
@@ -36,7 +36,7 @@ struct EntryModel: Identifiable, Codable {
 }
 
 // MARK: - Meaning1
-struct Meaning: Codable {
+struct Meaning: Codable, Hashable {
     let synonyms: [String]
     let idioms, americanisms, antonyms: [String]?
 }

@@ -9,18 +9,19 @@ import SwiftUI
 
 @main
 struct spanish_thesaurus_swiftUIApp: App {
-    @StateObject private var vm = HomeViewModel()
+    @StateObject private var vm = EntryDataService()
+   // @StateObject private var vm1 = EntryDataServiceSingle()
     var body: some Scene {
 
-        WindowGroup {
-
-                HomeView()
-
-            .environmentObject(vm)
-        }
-        
 //        WindowGroup {
-//            Search()
+//
+//                HomeView().environmentObject(vm)
+//
+//
 //        }
+//
+        WindowGroup {
+            Search(vm: vm)
+        }
     }
 }

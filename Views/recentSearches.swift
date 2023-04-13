@@ -14,7 +14,7 @@ struct recentSearches: View {
         
         VStack {
             
-            recentSearchTitle.padding([.top])
+            recentSearchTitle
                 .padding([.bottom], 15)
             
             ForEach(testArray.indices, id: \.self) { index in
@@ -31,9 +31,7 @@ struct recentSearches: View {
                         
                         
                     }
-                    Divider()
-                        .overlay(Color("divider"))
-                        .padding([.top, .bottom], 5)
+
                     
                 } else {
                     

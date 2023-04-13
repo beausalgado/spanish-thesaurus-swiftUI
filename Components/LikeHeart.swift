@@ -23,7 +23,7 @@ struct LikeHeart: View {
                 .foregroundColor(.black)
                 .font(.system(size: 20))
                // .frame(width: 25, height: 25)
-               .scaleEffect(likedFill ? 1.05 : 0.0)
+               .scaleEffect(likedFill ? 1.05 : 0.1)
 //               .opacity(!liked ? 0.5 : 1.0)
                 .onTapGesture {
                     withAnimation(!liked ? .spring(response: 0.3, dampingFraction: 0.45, blendDuration: 0.25).delay(0.05) : .default.delay(0.01)) {

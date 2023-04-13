@@ -26,6 +26,10 @@ class DeveloperPreview {
     
     let homeVM = HomeViewModel()
     let wordVM = test1ViewModel(string1: "abadejo")
+    let wordVM1 = EntryDataService()
+    let wordVM2 = EntryDataServiceSingle()
+    
+    
 
     
     

@@ -8,30 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
-    let array = ["Hello", "world", "SwiftUI", "Hello", "world", "SwiftUI", "Hello", "Hello", "hello"]
-    
-    
-        
-    
-    
-    
-    
-        var body: some View {
+    @Binding var searchText: String
+    @FocusState.Binding var focused: Bool
 
-            let text = array.joined(separator: ", ")
-                .capitalizingFirstLetter()
-                + "."
+       var body: some View {
+           HStack {
+               Image(systemName: "magnifyingglass")
+               TextField("Search", text: $searchText)
+                   .foregroundColor(.primary)
+                   .focused($focused)
 
-            Text(text)
-        }
-    
+               if !searchText.isEmpty {
+                   Button(action: {
+                       searchText = ""
+                   }) {
+                       Image(systemName: "xmark.circle.fill")
+                           .foregroundColor(.primary)
+                   }
+               }
+               
+         //      Text("focused: \(focused.description)")
+               
+           }
+           .padding(.horizontal)
+           .frame(height: 48)
+           .background(Color(.secondarySystemBackground))
+           .cornerRadius(12)
+       }
     
 }
-struct test_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct test_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView(searchText: .constant(""))
+//    }
+//}
 
 extension String {
     func capitalizingFirstLetter() -> String {

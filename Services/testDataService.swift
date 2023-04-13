@@ -19,7 +19,7 @@ class testDataServices {
     
     private func getEntries1(wordString: String) {
         print("call API")
-        guard let url = URL(string: "http://localhost:8080/entries/\(wordString)")
+        guard let url = URL(string: "http://localhost:8081/entries/fuzzy/\(wordString)")
         else {return}
         
         entrySubscription1 = NetworkingManager.download(url: url)

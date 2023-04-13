@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SearchResults: View {
-    @State var searchText: String = ""
     @State var searchFocused: Bool = false
     @State var isEditing: Bool = false
     @StateObject private var vm: test1ViewModel

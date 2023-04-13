@@ -7,25 +7,29 @@
 
 //import Foundation
 //import Combine
-//import SwiftUI
 //
 //class EntryViewModel: ObservableObject {
 //    @Published var word: [EntryModel] = []
-//    
+//    private var searchedWord: String = "abad"
+//    private let dataService = EntryDataService()
 //    private var cancellables = Set<AnyCancellable>()
-//    private let dataService: EntryDataService
-//    private let word1: EntryModel
+// 
 //
 //    init() {
-//        dataService = EntryDataService(wordString: "abadejo")
 //        addWordSubscriber()
 //    }
 //    
 //    func addWordSubscriber() {
+//        dataService.$searchedWord
+//            .sink { [weak self] (returnedEntry) in
+//                self?.searchedWord = returnedEntry
+//            }
+//            .store(in: &cancellables)
 //        dataService.$word
 //            .sink { [weak self] (returnedEntry) in
 //                self?.word = returnedEntry
 //            }
 //            .store(in: &cancellables)
+//
 //    }
 //}

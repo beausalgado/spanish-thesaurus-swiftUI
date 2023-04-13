@@ -24,13 +24,13 @@ struct Tabs: View {
                 .tag(0)
 
 
-            Favorites()
-                .tabItem {
-                    Image(systemName: "heart")
-                    Text("Favorites")
-                }
+//            Favorites()
+//                .tabItem {
+//                    Image(systemName: "heart")
+//                    Text("Favorites")
+              //  }
                 .tag(1)
-            Search()
+            //Search()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")

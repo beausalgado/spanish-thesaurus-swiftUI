@@ -17,7 +17,7 @@ class EntriesDataServices {
     }
     
     private func getEntries() {
-        guard let url = URL(string: "http://localhost:8080/entries")
+        guard let url = URL(string: "http://localhost:8081/entries")
         else {return}
         
         entrySubscription = NetworkingManager.download(url: url)
