@@ -29,6 +29,8 @@ class DeveloperPreview {
     let wordVM1 = EntryDataService()
     let wordVM2 = EntryDataServiceSingle()
     
+ 
+    
     
 
     

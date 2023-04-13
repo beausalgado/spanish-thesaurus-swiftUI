@@ -21,7 +21,10 @@ struct spanish_thesaurus_swiftUIApp: App {
 //        }
 //
         WindowGroup {
-            Search(vm: vm)
+            Search().environmentObject(vm)
         }
+//        WindowGroup {
+//            CoreDataTest()
+//        }
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchBar: View {
+struct SearchBar_Prototype: View {
     @State var searchText: String = ""
     @State  var isEditing: Bool = false
     @State var showFuzzyResults: Bool = false
@@ -86,9 +86,9 @@ struct SearchBar: View {
     }
 }
 
-struct SearchBar_Previews: PreviewProvider {
+struct SearchBar_Prototype_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar()
+        SearchBar_Prototype()
         
     }
 }

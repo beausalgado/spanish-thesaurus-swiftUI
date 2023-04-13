@@ -10,10 +10,10 @@ import SwiftUI
 import Combine
 
 
-
 class EntryDataService: ObservableObject {
     @Published var words: [EntryModel] = []
     @Published var searchedWord: String = ""
+    @Published var isLoading = false
 
     var wordSubscription: AnyCancellable?
     var textSubscription = Set<AnyCancellable>()
@@ -29,8 +29,6 @@ class EntryDataService: ObservableObject {
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
                 .sink(receiveValue: { [weak self] text in
                     guard !text.isEmpty else {return}
-                   // print("words")
-                 //   print(text)
                         self?.getWords(searchterm: text.lowercased())
                 })
                 .store(in: &textSubscription)
@@ -40,15 +38,7 @@ class EntryDataService: ObservableObject {
 
 
 
-//speed check
-//    let start = Date() // Record start time
-//    // Your database call here
-//    // ...
-//    let end = Date() // Record end time
-//    let timeElapsed = end.timeIntervalSince(start) // Calculate time elapsed in seconds
-//    print("Time elapsed: \(timeElapsed) seconds")
-//
-//    check size too
+
 
     private func getWords(searchterm: String) {
             guard let url = URL(string: "http://localhost:8081/entries/\(searchterm)")
@@ -58,6 +48,7 @@ class EntryDataService: ObservableObject {
                 .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedEntries) in
                   //  print("fuzzyget")
                     self?.words = returnedEntries
+                    self?.isLoading = false
                     self?.wordSubscription?.cancel()
 
                 })
@@ -66,41 +57,122 @@ class EntryDataService: ObservableObject {
 
     }
 
-//    private func searchedWordPublisher() {
-//            $searchedWord
+    //speed check
+    //    let start = Date() // Record start time
+    //    // Your database call here
+    //    // ...
+    //    let end = Date() // Record end time
+    //    let timeElapsed = end.timeIntervalSince(start) // Calculate time elapsed in seconds
+    //    print("Time elapsed: \(timeElapsed) seconds")
+    //
+    //    check size too
+    
+
+//class EntryDataService: ObservableObject {
+//
+//    @Published var words: [EntryModel] = []
+//    @Published var searchedWord: String = ""
+//    @Published var isLoading = false
+//
+//    var wordSubscription = Set<AnyCancellable>()
+//
+//    init(){
+//        searchWordsPublisher()
+//    }
+//
+//    private func searchWordsPublisher() {
+//        $searchedWord
 //            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
 //            .sink(receiveValue: { [weak self] text in
 //                guard !text.isEmpty else {return}
+//                //print("words")
+//                self?.getWords(searchterm: text.lowercased())
 //
-//                print("search")
-//               self?.getEntry(searchterm: text.lowercased())
-//                self?.show = true
-//                })
-//            .store(in: &textSubscription)
-//
-//
-//
+//            })
+//            .store(in: &wordSubscription)
 //    }
 //
 //
-//    private func getEntry(searchterm: String) {
-//            guard let url = URL(string: "http://localhost:8081/entries/\(searchterm)")
-//            else {return}
-//            wordSubscription = NetworkingManager.download(url: url)
-//                .decode(type: EntryModel.self , decoder: JSONDecoder())
-//                .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedEntries) in
-//                    print("searchget")
-//                    self?.word = [returnedEntries]
-//                    self?.wordSubscription?.cancel()
 //
+//    private func getWords(searchterm: String) {
+//        guard let url = URL(string: "http://localhost:8081/entries/\(searchterm)") else {
+//            return
+//        }
 //
-//                })
-//
-//
+//        NetworkingManager.download(url: url)
+//            .decode(type: [EntryModel].self, decoder: JSONDecoder())
+//            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedEntries) in
+//              //  print("wordsget")
+//                self?.words = returnedEntries
+//                self?.isLoading = false
+//            })
+//            .store(in: &wordSubscription)
 //
 //    }
+//
+    
+    
+    //speed check
+    
+    //    let start = Date() // Record start time
+    
+    //    // Your database call here
+    
+    //    // ...
+    
+    //    let end = Date() // Record end time
+    
+    //    let timeElapsed = end.timeIntervalSince(start) // Calculate time elapsed in seconds
+    
+    //    print("Time elapsed: \(timeElapsed) seconds")
+    
+    //
+    
+    //    check size too
+    
+    
+    
 
-
+    
+    
+    
+  
+    
+    //    private func searchedWordPublisher() {
+    //            $searchedWord
+    //            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
+    //            .sink(receiveValue: { [weak self] text in
+    //                guard !text.isEmpty else {return}
+    //
+    //                print("search")
+    //               self?.getEntry(searchterm: text.lowercased())
+    //                self?.show = true
+    //                })
+    //            .store(in: &textSubscription)
+    //
+    //
+    //
+    //    }
+    //
+    //
+    //    private func getEntry(searchterm: String) {
+    //            guard let url = URL(string: "http://localhost:8081/entries/\(searchterm)")
+    //            else {return}
+    //            wordSubscription = NetworkingManager.download(url: url)
+    //                .decode(type: EntryModel.self , decoder: JSONDecoder())
+    //                .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedEntries) in
+    //                    print("searchget")
+    //                    self?.word = [returnedEntries]
+    //                    self?.wordSubscription?.cancel()
+    //
+    //
+    //                })
+    //
+    //
+    //
+    //    }
+    
+    
 }
 
 

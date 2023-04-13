@@ -20,7 +20,7 @@ import SwiftUI
 //                resetView.toggle()
 //            }
 //            .id(resetView) // Use .id to reinitialize the view when resetView is toggled
-////            
+////
 ////            testchat(string1: searchText123)
 ////            testchat(string1: "abad")
 //        }
