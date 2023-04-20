@@ -38,15 +38,14 @@ struct Search: View {
                 
                 Spacer()
                 
-//                Group {
-//
-//                    Text("isEditing: \(isEditing.description)")
-//                    Text("showAutocomplete: \(showAutocomplete.description)")
-//                    Text("showResult: \(showResult.description)")
-//                    Text("isFocused: \(isFocused.description)")
-//                    Text("tapped: \(stillShowResult.description)")
-//
-//                }
+                Group {
+
+                    Text("showAutocomplete: \(showAutocomplete.description)")
+                    Text("showResult: \(showResult.description)")
+                    Text("isFocused: \(isFocused.description)")
+                    Text("tapped: \(stillShowResult.description)")
+                    Text("vm: \(vm.words.description)")
+                }
             }.padding([.leading, .trailing], 30).padding([.top])
         }
     }

@@ -24,7 +24,7 @@ struct spanish_thesaurus_swiftUIApp: App {
             Search().environmentObject(vm)
         }
 //        WindowGroup {
-//            CoreDataTest()
+//            recentlySearched()
 //        }
     }
 }

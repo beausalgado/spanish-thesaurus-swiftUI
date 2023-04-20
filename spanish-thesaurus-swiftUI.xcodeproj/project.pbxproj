@@ -16,6 +16,7 @@
 		00362DC8298847AB00BFD114 /* SplashViewOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00362DC7298847AB00BFD114 /* SplashViewOld.swift */; };
 		00362DCB2988482300BFD114 /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00362DC92988482300BFD114 /* Nunito-VariableFont_wght.ttf */; };
 		00362DCC2988482300BFD114 /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00362DCA2988482300BFD114 /* Nunito-Italic-VariableFont_wght.ttf */; };
+		00432E2D29F1E03C004EA1BB /* FavoritesHistoryContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00432E2B29F1E03C004EA1BB /* FavoritesHistoryContainer.xcdatamodeld */; };
 		0044BD7229CCF3D300765261 /* ShareIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044BD7129CCF3D300765261 /* ShareIcon.swift */; };
 		00466C4729842AC400D8DBDC /* sheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00466C4629842AC400D8DBDC /* sheetView.swift */; };
 		00466C49298436C700D8DBDC /* SearchRecents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00466C48298436C700D8DBDC /* SearchRecents.swift */; };
@@ -33,8 +34,7 @@
 		005C6C7C299E99DE009D9362 /* EntryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005C6C7B299E99DE009D9362 /* EntryRowView.swift */; };
 		005C6C7E299E9A20009D9362 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005C6C7D299E9A20009D9362 /* PreviewProvider.swift */; };
 		0075ECB729E8814900273D8E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075ECB629E8814900273D8E /* SearchBar.swift */; };
-		0075ECB929E8885600273D8E /* UserFavoritesAndHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075ECB829E8885600273D8E /* UserFavoritesAndHistory.swift */; };
-		0075ECBC29E888D400273D8E /* FavoritesAndHistoryContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0075ECBA29E888D400273D8E /* FavoritesAndHistoryContainer.xcdatamodeld */; };
+		0075ECB929E8885600273D8E /* CoreDataFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075ECB829E8885600273D8E /* CoreDataFavorites.swift */; };
 		0075ECBE29E889A000273D8E /* CoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075ECBD29E889A000273D8E /* CoreDataTest.swift */; };
 		0075ECC029E88A4900273D8E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075ECBF29E88A4900273D8E /* UserModel.swift */; };
 		0079F75F29B1137D009E8DB1 /* recentlySearched.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079F75E29B1137D009E8DB1 /* recentlySearched.swift */; };
@@ -42,6 +42,7 @@
 		0079F76329B11F48009E8DB1 /* autocompleteResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079F76229B11F48009E8DB1 /* autocompleteResults.swift */; };
 		0084015929CBE34C000B09E9 /* Searchbar1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084015829CBE34C000B09E9 /* Searchbar1.swift */; };
 		0084015D29CBE4D5000B09E9 /* FavoritesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084015C29CBE4D5000B09E9 /* FavoritesList.swift */; };
+		009B424D29F1DB350097A4BF /* CoreDataTest1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009B424C29F1DB350097A4BF /* CoreDataTest1.swift */; };
 		009BA0FA29DD144800BA8B30 /* to-do.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 009BA0F929DD144800BA8B30 /* to-do.rtf */; };
 		00A8E70929D6164B009C79F6 /* EntryRow1iew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8E70829D6164B009C79F6 /* EntryRow1iew.swift */; };
 		00A8E70B29D617FC009C79F6 /* SearchResults1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8E70A29D617FC009C79F6 /* SearchResults1.swift */; };
@@ -75,6 +76,7 @@
 		00362DC92988482300BFD114 /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		00362DCA2988482300BFD114 /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		00362DEE29884A5500BFD114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		00432E2C29F1E03C004EA1BB /* FavoritesHistoryContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritesHistoryContainer.xcdatamodel; sourceTree = "<group>"; };
 		0044BD7129CCF3D300765261 /* ShareIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareIcon.swift; sourceTree = "<group>"; };
 		00466C4629842AC400D8DBDC /* sheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sheetView.swift; sourceTree = "<group>"; };
 		00466C48298436C700D8DBDC /* SearchRecents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecents.swift; sourceTree = "<group>"; };
@@ -92,8 +94,7 @@
 		005C6C7B299E99DE009D9362 /* EntryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryRowView.swift; sourceTree = "<group>"; };
 		005C6C7D299E9A20009D9362 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		0075ECB629E8814900273D8E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		0075ECB829E8885600273D8E /* UserFavoritesAndHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoritesAndHistory.swift; sourceTree = "<group>"; };
-		0075ECBB29E888D400273D8E /* FavoritesAndHistoryContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritesAndHistoryContainer.xcdatamodel; sourceTree = "<group>"; };
+		0075ECB829E8885600273D8E /* CoreDataFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFavorites.swift; sourceTree = "<group>"; };
 		0075ECBD29E889A000273D8E /* CoreDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTest.swift; sourceTree = "<group>"; };
 		0075ECBF29E88A4900273D8E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0079F75E29B1137D009E8DB1 /* recentlySearched.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recentlySearched.swift; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 		0079F76229B11F48009E8DB1 /* autocompleteResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = autocompleteResults.swift; sourceTree = "<group>"; };
 		0084015829CBE34C000B09E9 /* Searchbar1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchbar1.swift; sourceTree = "<group>"; };
 		0084015C29CBE4D5000B09E9 /* FavoritesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesList.swift; sourceTree = "<group>"; };
+		009B424C29F1DB350097A4BF /* CoreDataTest1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTest1.swift; sourceTree = "<group>"; };
 		009BA0F929DD144800BA8B30 /* to-do.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "to-do.rtf"; sourceTree = "<group>"; };
 		00A8E70829D6164B009C79F6 /* EntryRow1iew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryRow1iew.swift; sourceTree = "<group>"; };
 		00A8E70A29D617FC009C79F6 /* SearchResults1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults1.swift; sourceTree = "<group>"; };
@@ -285,11 +287,12 @@
 			isa = PBXGroup;
 			children = (
 				00E35EC1299BDD4A00C052D8 /* EntriesDataService.swift */,
+				009B424C29F1DB350097A4BF /* CoreDataTest1.swift */,
 				0028D55629AD3EB400245F48 /* EntryDataService.swift */,
 				0028D55A29AD458100245F48 /* testDataService.swift */,
 				002DC5DE29DB3DD40008E16A /* EntryDataServiceSingle.swift */,
-				0075ECB829E8885600273D8E /* UserFavoritesAndHistory.swift */,
-				0075ECBA29E888D400273D8E /* FavoritesAndHistoryContainer.xcdatamodeld */,
+				0075ECB829E8885600273D8E /* CoreDataFavorites.swift */,
+				00432E2B29F1E03C004EA1BB /* FavoritesHistoryContainer.xcdatamodeld */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -374,14 +377,14 @@
 				00E07AD529B259E5006D7429 /* LikeHeart.swift in Sources */,
 				0047687A29899A52006A5128 /* SplashView.swift in Sources */,
 				004C8AC12993FD7C0069D1F9 /* offset.swift in Sources */,
-				0075ECB929E8885600273D8E /* UserFavoritesAndHistory.swift in Sources */,
+				0075ECB929E8885600273D8E /* CoreDataFavorites.swift in Sources */,
 				0075ECC029E88A4900273D8E /* UserModel.swift in Sources */,
 				005C6C7A299E9780009D9362 /* HomeViewModel.swift in Sources */,
 				0075ECBE29E889A000273D8E /* CoreDataTest.swift in Sources */,
 				00E35EC2299BDD4A00C052D8 /* EntriesDataService.swift in Sources */,
 				0028D55929AD407B00245F48 /* EntryViewModel.swift in Sources */,
 				0028D55B29AD458100245F48 /* testDataService.swift in Sources */,
-				0075ECBC29E888D400273D8E /* FavoritesAndHistoryContainer.xcdatamodeld in Sources */,
+				009B424D29F1DB350097A4BF /* CoreDataTest1.swift in Sources */,
 				00CDF8E2295E3DE100171947 /* HideKeyboard.swift in Sources */,
 				0047717129AF9ED700790187 /* testchat.swift in Sources */,
 				00B9B42929A6CA05001DE1D5 /* CapitalizedFirstLetter.swift in Sources */,
@@ -417,6 +420,7 @@
 				0047716B29AE5DFA00790187 /* stringdata.swift in Sources */,
 				004C8AE12995457B0069D1F9 /* Favorites.swift in Sources */,
 				0084015D29CBE4D5000B09E9 /* FavoritesList.swift in Sources */,
+				00432E2D29F1E03C004EA1BB /* FavoritesHistoryContainer.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,13 +631,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0075ECBA29E888D400273D8E /* FavoritesAndHistoryContainer.xcdatamodeld */ = {
+		00432E2B29F1E03C004EA1BB /* FavoritesHistoryContainer.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0075ECBB29E888D400273D8E /* FavoritesAndHistoryContainer.xcdatamodel */,
+				00432E2C29F1E03C004EA1BB /* FavoritesHistoryContainer.xcdatamodel */,
 			);
-			currentVersion = 0075ECBB29E888D400273D8E /* FavoritesAndHistoryContainer.xcdatamodel */;
-			path = FavoritesAndHistoryContainer.xcdatamodeld;
+			currentVersion = 00432E2C29F1E03C004EA1BB /* FavoritesHistoryContainer.xcdatamodel */;
+			path = FavoritesHistoryContainer.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

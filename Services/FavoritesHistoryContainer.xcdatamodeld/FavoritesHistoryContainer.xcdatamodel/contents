@@ -8,11 +8,8 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="meaning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MeaningEntity" inverseName="antonyms" inverseEntity="MeaningEntity"/>
     </entity>
-    <entity name="Deletelater" representedClassName="Deletelater" syncable="YES" codeGenerationType="class">
-        <attribute name="test" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-    </entity>
     <entity name="EntryEntity" representedClassName="EntryEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="entry" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="favorite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FavoritesEntity" inverseName="entries" inverseEntity="FavoritesEntity"/>
         <relationship name="history" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HistoryEntity" inverseName="entries" inverseEntity="HistoryEntity"/>
         <relationship name="meaning" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MeaningEntity" inverseName="entry" inverseEntity="MeaningEntity"/>
