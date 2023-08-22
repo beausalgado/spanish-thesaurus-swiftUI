@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22G90" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AmericanismEntity" representedClassName="AmericanismEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="meaning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MeaningEntity" inverseName="americanisms" inverseEntity="MeaningEntity"/>
+    </entity>
+    <entity name="AntonymEntity" representedClassName="AntonymEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="meaning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MeaningEntity" inverseName="antonyms" inverseEntity="MeaningEntity"/>
+    </entity>
+    <entity name="EntryEntity" representedClassName="EntryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="favorite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FavoritesEntity" inverseName="entries" inverseEntity="FavoritesEntity"/>
+        <relationship name="history" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HistoryEntity" inverseName="entries" inverseEntity="HistoryEntity"/>
+        <relationship name="meanings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MeaningEntity" inverseName="entry" inverseEntity="MeaningEntity"/>
+    </entity>
+    <entity name="FavoritesEntity" representedClassName="FavoritesEntity" syncable="YES" codeGenerationType="class">
+        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntryEntity" inverseName="favorite" inverseEntity="EntryEntity"/>
+    </entity>
+    <entity name="HistoryEntity" representedClassName="HistoryEntity" syncable="YES" codeGenerationType="class">
+        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntryEntity" inverseName="history" inverseEntity="EntryEntity"/>
+    </entity>
+    <entity name="IdiomEntity" representedClassName="IdiomEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="meaning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MeaningEntity" inverseName="idioms" inverseEntity="MeaningEntity"/>
+    </entity>
+    <entity name="MeaningEntity" representedClassName="MeaningEntity" syncable="YES" codeGenerationType="class">
+        <relationship name="americanisms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AmericanismEntity" inverseName="meaning" inverseEntity="AmericanismEntity"/>
+        <relationship name="antonyms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AntonymEntity" inverseName="meaning" inverseEntity="AntonymEntity"/>
+        <relationship name="entry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntryEntity" inverseName="meanings" inverseEntity="EntryEntity"/>
+        <relationship name="idioms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IdiomEntity" inverseName="meaning" inverseEntity="IdiomEntity"/>
+        <relationship name="synonyms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SynonymEntity" inverseName="meaning" inverseEntity="SynonymEntity"/>
+    </entity>
+    <entity name="Struct" representedClassName="Struct" syncable="YES" codeGenerationType="class">
+        <attribute name="attribute" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="item" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="SynonymEntity" representedClassName="SynonymEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="meaning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MeaningEntity" inverseName="synonyms" inverseEntity="MeaningEntity"/>
+    </entity>
+</model>
