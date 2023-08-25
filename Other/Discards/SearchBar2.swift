@@ -1,11 +1,11 @@
 //
-//  SearchBar.swift
+//  SearchBar2.swift
 //  spanish-thesaurus-swiftUI
 //
 //  Created by Beau Salgado on 4/13/23.
 //
 
-import SwiftUI
+//import SwiftUI
 
 //struct SearchBar: View {
 //    @Binding var searchText: String

@@ -19,7 +19,7 @@ struct EntryRow: View {
                 ForEach(data.meanings.indices, id:\.self) { index in
                     Text("\(index + 1).")
                         .font(.custom("Nunito", size: 20, relativeTo: .body))
-                    //    .fontWeight(.bold)
+                         .fontWeight(.bold)
 
 
                     HStack(spacing:0) {
@@ -56,7 +56,9 @@ struct EntryRow: View {
                         VStack(alignment:.leading, spacing:0) {
                             ForEach (data.meanings[index].idioms!.indices, id: \.self) { subIndex in
 
-                                Text("\"\(data.meanings[index].idioms![subIndex]).\"".capitalizeSecond())
+                                Text("\"\(data.meanings[index].idioms![subIndex]).\""
+                                    .capitalizeSecond()
+                                )
                                     .font(.custom("Nunito", size: 14, relativeTo: .body))
                                     .italic()
                             }
@@ -129,15 +131,6 @@ extension EntryRow {
 
 
 
-//extension String {
-//    func capitalizeSecond() -> String {
-//        guard self.count > 1 else { return self }
-//        let firstChar = self.prefix(1)
-//        let secondChar = self[self.index(self.startIndex, offsetBy: 1)...self.index(self.startIndex, offsetBy: 1)].capitalized
-//        let rest = self.dropFirst(2)
-//        return "\(firstChar)\(secondChar)\(rest)"
-//    }
-//}
 
 
 //if (self.data.meanings[index].idioms != nil){

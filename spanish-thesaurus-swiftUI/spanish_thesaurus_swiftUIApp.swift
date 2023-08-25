@@ -12,16 +12,16 @@ struct spanish_thesaurus_swiftUIApp: App {
     @StateObject private var vm = EntryDataService()
     var body: some Scene {
 
-//        WindowGroup {
-//
-//                Index()
-//
-//
-//        }
-//
         WindowGroup {
-            SearchTab().environmentObject(vm)
+
+                Index().environmentObject(vm)
+
+
         }
+
+//        WindowGroup {
+//            SearchTab().environmentObject(vm)
+//        }
 //        WindowGroup {
 //            CoreDataTest1()
 //        }

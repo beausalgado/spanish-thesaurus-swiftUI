@@ -30,7 +30,7 @@ struct Tabs: View {
                     Text("Favorites")
                 }
                 .tag(1)
-        //    SearchTab()
+            SearchTab()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
