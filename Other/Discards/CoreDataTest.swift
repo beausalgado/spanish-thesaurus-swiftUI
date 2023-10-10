@@ -1,10 +1,10 @@
+////
+////  CoreDataTest.swift
+////  spanish-thesaurus-swiftUI
+////
+////  Created by Beau Salgado on 4/13/23.
+////
 //
-//  CoreDataTest.swift
-//  spanish-thesaurus-swiftUI
-//
-//  Created by Beau Salgado on 4/13/23.
-//
-
 //import SwiftUI
 //
 //struct CoreDataTest: View {

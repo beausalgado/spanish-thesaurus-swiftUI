@@ -29,6 +29,11 @@ struct ShareIcon: View {
 //                                        }}
 //            
             ZStack {
+                Rectangle()
+                    .fill(.white)
+                    .frame(width: 25, height: 25)
+                    .opacity(0.01)
+                    
                     
                 
        //      Text("\(liked.description)")
@@ -38,6 +43,8 @@ struct ShareIcon: View {
             .font(.system(size: 20))
             .labelStyle(.iconOnly)
             .accentColor(.black)
+            .frame(width: 25, height: 25)
+            .padding(.bottom, 3)
             //.opacity(0.5)
 
     }

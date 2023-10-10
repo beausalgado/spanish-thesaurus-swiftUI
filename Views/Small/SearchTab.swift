@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SearchTab: View {
     @EnvironmentObject var vm: EntryDataService
+    @StateObject var coredata = CoreDataHistory()
     @State var searchText: String = ""
     @State var showAutocomplete: Bool = false
     @State var showResult: Bool = false
@@ -35,7 +36,8 @@ struct SearchTab: View {
                     result
                 }
                 
-                Spacer()
+              //  Spacer()
+            
                 
 //                Group {
 //
@@ -69,7 +71,10 @@ extension SearchTab {
                 }
                 
             } else {
+                Spacer()
                 ProgressView()
+                    .padding(100)
+                   
             }
         }
     }
@@ -91,6 +96,10 @@ extension SearchTab {
                             isFocused = false
                             stillShowResult = true
                             showResult = true
+                            if (!coredata.isInHistory(text: searchText)){
+                                coredata.addHistory(text: entry.entry)
+                            }
+
                         }
                 }
             }

@@ -17,21 +17,25 @@ struct FavoritesTab: View {
     @FocusState var isFocused: Bool
     var body: some View {
         VStack (spacing:0) {
-            searchbar.padding(.horizontal, 30)
+            HomeHeader().padding([.leading, .trailing], 30)
+                .padding([.bottom], 1)
+                .padding(.top, 25)
             Divider()
-                .overlay(Color("divider"))
-                .padding([.top, .bottom], 5)
+                .frame(height: 0.1)
+                .background(Color("strokeSearch"))
             ScrollView {
 
 
 
                 FavoritesList().padding([.leading, .trailing], 30)
+                    .padding([.top], 20)
+
 
                 Spacer()
 
 
             }
-        }.padding(.top, 25)
+        }//.padding(.top, 25)
     }
 }
 
@@ -40,7 +44,7 @@ struct FavoritesTab: View {
 struct Favorites_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            FavoritesTab()
+            FavoritesTab().environmentObject(dev.wordVM)
         }
     }
 }

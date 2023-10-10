@@ -13,7 +13,7 @@ import Combine
 class EntryDataService: ObservableObject {
     @Published var words: [EntryModel] = []
     @Published var searchedWord: String = ""
-    @Published var isLoading = false
+    @Published var isLoading = true
     
     
     var wordSubscription: AnyCancellable?

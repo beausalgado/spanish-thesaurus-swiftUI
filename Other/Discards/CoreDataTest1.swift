@@ -1,10 +1,10 @@
+////
+////  CoreDataTest1.swift
+////  spanish-thesaurus-swiftUI
+////
+////  Created by Beau Salgado on 4/20/23.
+////
 //
-//  CoreDataTest1.swift
-//  spanish-thesaurus-swiftUI
-//
-//  Created by Beau Salgado on 4/20/23.
-//
-
 //import SwiftUI
 //import CoreData
 //
@@ -15,7 +15,7 @@
 //    let context: NSManagedObjectContext
 //    
 //    init() {
-//    container = NSPersistentContainer(name: "FavoritesHistoryContainer")
+//    container = NSPersistentContainer(name: "FavoritesAndHistoryContainer")
 //        container.loadPersistentStores { (description, error) in
 //            if let error = error {
 //                print("Error loading Core Data. \(error)")
@@ -49,19 +49,11 @@
 //        }
 //    
 //    func getEntries() {
-//        let request = NSFetchRequest<Struct>(entityName: "Struct")
+//        let request = NSFetchRequest<FavoritesEntity>(entityName: "FavoritesEntity")
 //
 //        do {
 //            let results = try manager.context.fetch(request)
-//            if let myEntity = results.first,
-//               let entryModelData = myEntity.item as? Data {
-//                let transformer = EntryModelValueTransformer()
-//                if let entryModel = transformer.reverseTransformedValue(entryModelData) as? EntryModel {
-//                    entries.append(entryModel)
-//                    print(entries)
-//                    print("fetched")
-//                }
-//            }
+//
 //        } catch let error {
 //            print("Error fetching. \(error.localizedDescription)")
 //        }
@@ -69,10 +61,10 @@
 //    
 //    
 //    
-    
-
-
-
+//    
+//
+//
+//
 //    let manager = CoreDataManager.instance
 //    @Published var entries: [EntryEntity] = []
 //
@@ -169,8 +161,8 @@
 //        CoreDataTest1()
 //    }
 //}
-
-
+//
+//
 //struct EntryView: View {
 //
 //    let entity: EntryEntity

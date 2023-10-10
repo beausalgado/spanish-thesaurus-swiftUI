@@ -24,10 +24,10 @@ struct Sheet: View {
                     Toggle(isOn: $offline,
                            label: {
                         HStack {
-                            Image(systemName: "square.and.arrow.down.fill")
+                            Image(systemName: "moon.fill")
                                 .font(.system(size: 20))
                                 .padding([.trailing], 10)
-                            Text("Descargar diccionario offline")
+                            Text("Modo oscuro")
                                 .font(.body)
                             Spacer(minLength: 0)
                         }
@@ -47,19 +47,19 @@ struct Sheet: View {
                     Spacer(minLength: 0)
                 }
                 
-                Divider()
-                    .overlay(.white)
-                    .padding([.leading, .trailing], 25)
-                    .padding([.top, .bottom], 5)
-                
-                HStack{
-                    Image(systemName: "gearshape.fill")
-                        .font(.system(size: 20))
-                        .padding([.trailing], 10)
-                    Text("Configuración")
-                        .font(.body)
-                    Spacer(minLength: 0)
-                }
+//                Divider()
+//                    .overlay(.white)
+//                    .padding([.leading, .trailing], 25)
+//                    .padding([.top, .bottom], 5)
+//                
+//                HStack{
+//                    Image(systemName: "gearshape.fill")
+//                        .font(.system(size: 20))
+//                        .padding([.trailing], 10)
+//                    Text("Configuración")
+//                        .font(.body)
+//                    Spacer(minLength: 0)
+//                }
                     
                 Spacer()
                     

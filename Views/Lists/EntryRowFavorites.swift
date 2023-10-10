@@ -1,5 +1,5 @@
 //
-//  EntryRow.swift
+//  EntryRowFavorites.swift
 //  spanish-thesaurus-swiftUI
 //
 //  Created by Beau Salgado on 2/16/23.
@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct EntryRow: View {
-    @State var likedFill: Bool = false
-    @State var liked: Bool = false
+struct EntryRowFavorites: View {
+    @State var likedFill: Bool = true
+    @State var liked: Bool = true
+    @State var deleteWord: String = ""
     @StateObject var coredata = CoreDataFavorites()
     let data: EntryModel
 
@@ -103,13 +104,13 @@ struct EntryRow: View {
 
 }
 
-struct EntryRowView_Previews: PreviewProvider {
+struct EntryRowFavoritesView_Previews: PreviewProvider {
     static var previews: some View {
-        EntryRow(data: dev.entry)
+        EntryRowFavorites(data: dev.entry)
     }
 }
 
-extension EntryRow {
+extension EntryRowFavorites {
     
     
     
@@ -129,7 +130,7 @@ extension EntryRow {
     }
 }
 
-extension EntryRow {
+extension EntryRowFavorites {
     
     
     private var LikeHeart: some View {
@@ -142,8 +143,8 @@ extension EntryRow {
                     withAnimation(!liked ? .spring(response: 0.3, dampingFraction: 0.45, blendDuration: 0.25).delay(0.05) : .default.delay(0.01)) {
                         self.liked.toggle()
                         self.likedFill.toggle()
-                        if (!coredata.isFavorite(text: data.entry)){
-                            coredata.addFavorite(text: data.entry)
+                        withAnimation (.easeInOut(duration: 0.32)){
+                            coredata.deleteFavoritesByEntry(text: deleteWord)
                         }
                         
                     }

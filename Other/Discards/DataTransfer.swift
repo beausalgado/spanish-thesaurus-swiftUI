@@ -1,10 +1,10 @@
+////
+////  DataTransfer.swift
+////  spanish-thesaurus-swiftUI
+////
+////  Created by Beau Salgado on 4/24/23.
+////
 //
-//  DataTransfer.swift
-//  spanish-thesaurus-swiftUI
-//
-//  Created by Beau Salgado on 4/24/23.
-//
-
 //import Foundation
 //
 //class EntryModelValueTransformer: ValueTransformer {
