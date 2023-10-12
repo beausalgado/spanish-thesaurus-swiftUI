@@ -24,7 +24,7 @@ struct Tabs: View {
                 .tag(0)
 
 
-            FavoritesTab()
+//            FavoritesTab()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Favorites")

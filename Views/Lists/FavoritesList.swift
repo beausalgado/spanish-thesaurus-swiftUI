@@ -12,16 +12,31 @@ struct FavoritesList: View {
     @State var likedFill: Bool = true
     @State var liked: Bool = true
     @State var showWord: Bool = false
+    @State var showFavorites: Bool = true
     @StateObject var vm = CoreDataFavorites()
+    @State private var showSheet: Bool = false
+    @State private var splashView: Bool = true
+    @State var arrowBoolean: Bool = true
     var body: some View {
-        VStack {
-            
-            if !showWord {
-                listOfFavorites
-            } else {
-                wordView
-            }
+        VStack (spacing:0){
+            header.padding([.leading, .trailing], 30)
+                            .padding([.bottom], 1)
+                            .padding(.top, 25)
+            Divider()
+                            .frame(height: 0.1)
+                            .background(Color("strokeSearch"))
+            ScrollView {
+                VStack {
+                    
+                    if !showWord && showFavorites {
+                        listOfFavorites
+                    } else {
+                        wordView
+                    }
 
+                }.padding([.leading, .trailing], 30)
+                    .padding([.top], 20)
+            }
         }
     }
     
@@ -77,7 +92,9 @@ extension FavoritesList {
                     .background(Color.blue)
                     .onTapGesture {
                         vmMongo.searchedWord = entity.entry ?? ""
-                        showWord = true
+                        showWord.toggle()
+                        showFavorites.toggle()
+                        arrowBoolean.toggle()
                     }
                     Heart(entry: entity.entry ?? "", vm: vm)
                 }
@@ -108,15 +125,6 @@ extension FavoritesList {
 
                 }
             
-                Text("test")
-                    .onTapGesture {
-                        withAnimation {
-                            showWord = false
-                            vmMongo.isLoading = true
-                            vm.fetchFavorites()
-                        }
-
-                    }
             }
 
         }
@@ -132,3 +140,60 @@ struct FavoritesList_Previews: PreviewProvider {
 }
 
 
+extension FavoritesList {
+    
+
+   private var header: some View {
+        HStack   {
+            if arrowBoolean {
+                Image( "brontosaurus")
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    //.padding([.leading], 20)
+                    .opacity(0.7)
+            } else {
+                
+                Button(action: {
+                    withAnimation {
+                        vmMongo.isLoading = true
+                        vm.fetchFavorites()
+                        showWord.toggle()
+                        showFavorites.toggle()
+                        arrowBoolean = true
+                    }
+                 
+                }, label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.black)
+                        .frame(height: 40)
+                        .padding(.trailing, 20)
+                })
+
+            }
+
+
+            Spacer()
+            Button(action: {
+                showSheet.toggle()
+            }, label: {
+                Label("Hamburger", systemImage: "line.3.horizontal")
+                    .font(.system(size: 25))
+                    .labelStyle(.iconOnly)
+                    .foregroundColor(Color.black)
+               //     .padding([.trailing], 30)
+            })
+            .sheet(isPresented: $showSheet) {
+                Sheet()
+                    .presentationDetents([ .fraction(0.30)])
+
+                
+            }
+            
+            
+            
+            
+            
+        } .animation(.easeInOut(duration: 0.7))
+       
+    }
+}

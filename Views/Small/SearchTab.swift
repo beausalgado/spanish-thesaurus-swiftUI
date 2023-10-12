@@ -39,14 +39,18 @@ struct SearchTab: View {
               //  Spacer()
             
                 
-//                Group {
+                Group {
+                    Text(searchText)
 //
 //                    Text("showAutocomplete: \(showAutocomplete.description)")
 //                    Text("showResult: \(showResult.description)")
 //                    Text("isFocused: \(isFocused.description)")
 //                    Text("tapped: \(stillShowResult.description)")
-//                    Text("vm: \(vm.words.description)")
-//                }
+                    Text("vm: \(vm.words.count)")
+                    Text("vm: \(vm.words.description)")
+                 
+                  
+                }
             }.padding([.leading, .trailing], 30).padding([.top])
         }
     }
@@ -63,7 +67,7 @@ extension SearchTab {
     private var result: some View {
         VStack {
             
-            if let filterVM = vm.words.first(where: { $0.entry == searchText.lowercased()}) {
+            if let filterVM = vm.words.first(where: { $0.entry.lowercased() == searchText.lowercased() }) {
                 ZStack {
                     EntryRow(data: filterVM)
                 }.onAppear {

@@ -12,13 +12,31 @@ struct HomeHeader: View {
     
     @State private var showSheet: Bool = false
     @State private var splashView: Bool = true
+    @State var arrowBoolean: Bool = true
     var body: some View {
         HStack   {
-            Image("brontosaurus")
-                .resizable()
-                .frame(width: 40, height: 40)
-                //.padding([.leading], 20)
-                .opacity(0.6)
+            if arrowBoolean {
+                Image( "brontosaurus")
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    //.padding([.leading], 20)
+                    .opacity(0.6)
+            } else {
+                Image(systemName: "chevron.left")
+                    .frame(width: 40, height: 40)
+                    .onTapGesture {
+                        
+                    }
+            }
+            Button(action: {
+                withAnimation {
+                    arrowBoolean.toggle()
+                }
+             
+            }, label: {
+             Text("hello")
+            })
+
             Spacer()
             Button(action: {
                 showSheet.toggle()
@@ -40,7 +58,7 @@ struct HomeHeader: View {
             
             
             
-        }
+        } .animation(.easeInOut(duration: 0.7))
        
     }
 }

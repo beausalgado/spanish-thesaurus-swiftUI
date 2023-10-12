@@ -31,7 +31,7 @@ class DeveloperPreview {
     
     let entry = EntryModel(
         id: "63ea9b2da538bfd8b38176e7",
-        entry: "abajadero",
+        entry: "Abajadero",
         meanings: [Meaning(
             synonyms: [
                 "bajada",
