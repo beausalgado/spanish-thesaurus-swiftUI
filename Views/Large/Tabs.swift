@@ -24,7 +24,7 @@ struct Tabs: View {
                 .tag(0)
 
 
-//            FavoritesTab()
+            FavoritesList()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Favorites")
@@ -45,5 +45,8 @@ struct Tabs: View {
 struct SouthTabs_Previews: PreviewProvider {
     static var previews: some View {
         Tabs()
+            .environmentObject(dev.wordVM)
+            .environmentObject(dev.cdHistory)
+            .environmentObject(dev.cdFavorites)
     }
 }

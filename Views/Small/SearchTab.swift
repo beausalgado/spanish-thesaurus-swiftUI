@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SearchTab: View {
     @EnvironmentObject var vm: EntryDataService
-    @StateObject var coredata = CoreDataHistory()
+    @EnvironmentObject var coredata: CoreDataHistory
     @State var searchText: String = ""
     @State var showAutocomplete: Bool = false
     @State var showResult: Bool = false
@@ -25,40 +25,44 @@ struct SearchTab: View {
             ScrollView {
                 
                 if searchText.isEmpty  {
-                    RecentlySearched()
+                    RecentlySearched().padding([.top])
                 }
                 
                 if showAutocomplete && !searchText.isEmpty {
-                    autocompleteresults
+                    autocompleteresults.padding([.top])
                 }
                 
                 if showResult {
-                    result
+                    result.padding([.top])
                 }
                 
               //  Spacer()
             
                 
-                Group {
-                    Text(searchText)
+   //             Group {
+     //               Text(searchText)
 //
 //                    Text("showAutocomplete: \(showAutocomplete.description)")
 //                    Text("showResult: \(showResult.description)")
 //                    Text("isFocused: \(isFocused.description)")
 //                    Text("tapped: \(stillShowResult.description)")
-                    Text("vm: \(vm.words.count)")
-                    Text("vm: \(vm.words.description)")
+//                    Text("vm: \(vm.words.count)")
+//                    Text("vm: \(vm.words.description)")
                  
                   
-                }
-            }.padding([.leading, .trailing], 30).padding([.top])
+     //           }
+            }.padding([.leading, .trailing], 30)
+                
         }
     }
 }
 
 struct Search_Previews: PreviewProvider {
     static var previews: some View {
-        SearchTab().environmentObject(dev.wordVM)
+        SearchTab()
+            .environmentObject(dev.wordVM)
+            .environmentObject(dev.cdHistory)
+            .environmentObject(dev.cdFavorites)
     }
 }
 

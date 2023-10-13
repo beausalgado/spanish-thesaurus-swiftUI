@@ -9,11 +9,11 @@ import SwiftUI
 
 struct FavoritesList: View {
     @EnvironmentObject var vmMongo: EntryDataService
+    @EnvironmentObject var vm: CoreDataFavorites
     @State var likedFill: Bool = true
     @State var liked: Bool = true
     @State var showWord: Bool = false
     @State var showFavorites: Bool = true
-    @StateObject var vm = CoreDataFavorites()
     @State private var showSheet: Bool = false
     @State private var splashView: Bool = true
     @State var arrowBoolean: Bool = true
@@ -54,6 +54,7 @@ extension FavoritesList {
                     withAnimation(!liked ? .spring(response: 0.3, dampingFraction: 0.45, blendDuration: 0.25).delay(0.05) : .default.delay(0.01)) {
                         self.liked.toggle()
                         self.likedFill.toggle()
+                        
                     }
                 }
                 .zIndex(2)
@@ -89,14 +90,14 @@ extension FavoritesList {
                             Spacer()
  
                         }
-                    .background(Color.blue)
+                    .background(Color.white)
                     .onTapGesture {
                         vmMongo.searchedWord = entity.entry ?? ""
                         showWord.toggle()
                         showFavorites.toggle()
                         arrowBoolean.toggle()
                     }
-                    Heart(entry: entity.entry ?? "", vm: vm)
+                    Heart(entry: entity.entry ?? "", vm: _vm)
                 }
                 if !vm.isLastFavorite(entity) {
                     Divider()
@@ -135,7 +136,9 @@ extension FavoritesList {
 
 struct FavoritesList_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritesList().environmentObject(dev.wordVM)
+        FavoritesList()
+            .environmentObject(dev.wordVM)
+            .environmentObject(dev.cdFavorites)
     }
 }
 
@@ -193,7 +196,7 @@ extension FavoritesList {
             
             
             
-        } .animation(.easeInOut(duration: 0.7))
+        } .animation(.easeInOut(duration: 0.2))
        
     }
 }

@@ -50,6 +50,9 @@
 		0079F76329B11F48009E8DB1 /* AutocompleteResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079F76229B11F48009E8DB1 /* AutocompleteResults.swift */; };
 		0084015929CBE34C000B09E9 /* Searchbar11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084015829CBE34C000B09E9 /* Searchbar11.swift */; };
 		0084015D29CBE4D5000B09E9 /* FavoritesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084015C29CBE4D5000B09E9 /* FavoritesList.swift */; };
+		009893392AD9C82100DEFEDA /* OldRecents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009893382AD9C82100DEFEDA /* OldRecents.swift */; };
+		0098933B2AD9CD9000DEFEDA /* Searchbarfix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0098933A2AD9CD9000DEFEDA /* Searchbarfix.swift */; };
+		009893412AD9D19E00DEFEDA /* Xmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009893402AD9D19E00DEFEDA /* Xmark.swift */; };
 		009B424D29F1DB350097A4BF /* CoreDataTest1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009B424C29F1DB350097A4BF /* CoreDataTest1.swift */; };
 		009BA0FA29DD144800BA8B30 /* to-do.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 009BA0F929DD144800BA8B30 /* to-do.rtf */; };
 		009C105B29F74E0600EB1683 /* DataTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C105A29F74E0600EB1683 /* DataTransfer.swift */; };
@@ -123,6 +126,9 @@
 		0079F76229B11F48009E8DB1 /* AutocompleteResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteResults.swift; sourceTree = "<group>"; };
 		0084015829CBE34C000B09E9 /* Searchbar11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchbar11.swift; sourceTree = "<group>"; };
 		0084015C29CBE4D5000B09E9 /* FavoritesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesList.swift; sourceTree = "<group>"; };
+		009893382AD9C82100DEFEDA /* OldRecents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldRecents.swift; sourceTree = "<group>"; };
+		0098933A2AD9CD9000DEFEDA /* Searchbarfix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchbarfix.swift; sourceTree = "<group>"; };
+		009893402AD9D19E00DEFEDA /* Xmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xmark.swift; sourceTree = "<group>"; };
 		009B424C29F1DB350097A4BF /* CoreDataTest1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTest1.swift; sourceTree = "<group>"; };
 		009BA0F929DD144800BA8B30 /* to-do.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "to-do.rtf"; sourceTree = "<group>"; };
 		009C105A29F74E0600EB1683 /* DataTransfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransfer.swift; sourceTree = "<group>"; };
@@ -192,7 +198,6 @@
 				0075ECBD29E889A000273D8E /* CoreDataTest.swift */,
 				009B424C29F1DB350097A4BF /* CoreDataTest1.swift */,
 				009C105A29F74E0600EB1683 /* DataTransfer.swift */,
-				001A08A22A994F42009B36CC /* Backups */,
 				00A8E70829D6164B009C79F6 /* EntryRow1.swift */,
 				00466C48298436C700D8DBDC /* SearchRecents.swift */,
 				0084015829CBE34C000B09E9 /* Searchbar11.swift */,
@@ -215,6 +220,9 @@
 				0047717029AF9ED700790187 /* testchat.swift */,
 				0028D55829AD407B00245F48 /* EntryViewModel.swift */,
 				00E7B81C2AD5DB1E007D7931 /* oldFavoritesList.swift */,
+				009893382AD9C82100DEFEDA /* OldRecents.swift */,
+				001A08A22A994F42009B36CC /* Backups */,
+				0098933A2AD9CD9000DEFEDA /* Searchbarfix.swift */,
 			);
 			path = Discards;
 			sourceTree = "<group>";
@@ -361,6 +369,7 @@
 				00CDF8DC295E3D1E00171947 /* SearchbarPrototype.swift */,
 				001A089C2A994A46009B36CC /* SearchBar.swift */,
 				000DDE042AD4BFFE00074AFD /* Heart.swift */,
+				009893402AD9D19E00DEFEDA /* Xmark.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -492,6 +501,7 @@
 				0028D55D29AD462600245F48 /* test1ViewModel.swift in Sources */,
 				002DC5DF29DB3DD40008E16A /* EntryDataServiceSingle.swift in Sources */,
 				004768802989A97B006A5128 /* HomeTab.swift in Sources */,
+				009893412AD9D19E00DEFEDA /* Xmark.swift in Sources */,
 				005C6C7E299E9A20009D9362 /* PreviewProvider.swift in Sources */,
 				005966CD2ABA4A9A00A40312 /* FavoritesAndHistoryContainer.xcdatamodeld in Sources */,
 				0044BD7229CCF3D300765261 /* ShareIcon.swift in Sources */,
@@ -505,6 +515,7 @@
 				004CB35E29AA6CD400364AE3 /* Networking Manager.swift in Sources */,
 				00CDF8CE295E3D0300171947 /* spanish_thesaurus_swiftUIApp.swift in Sources */,
 				00B9B42529A680C0001DE1D5 /* SearchResults.swift in Sources */,
+				009893392AD9C82100DEFEDA /* OldRecents.swift in Sources */,
 				00E07AD729B2A4C3006D7429 /* testset.swift in Sources */,
 				00D205E929CE474E001E9E09 /* CustomTabBarView.swift in Sources */,
 				0084015929CBE34C000B09E9 /* Searchbar11.swift in Sources */,
@@ -527,6 +538,7 @@
 				0028D55229AD128900245F48 /* CustomHeader.swift in Sources */,
 				00CDF8DF295E3D6500171947 /* Tabs.swift in Sources */,
 				0047716B29AE5DFA00790187 /* stringdata.swift in Sources */,
+				0098933B2AD9CD9000DEFEDA /* Searchbarfix.swift in Sources */,
 				004C8AE12995457B0069D1F9 /* FavoritesTab.swift in Sources */,
 				0084015D29CBE4D5000B09E9 /* FavoritesList.swift in Sources */,
 			);

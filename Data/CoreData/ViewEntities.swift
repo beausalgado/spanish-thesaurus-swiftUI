@@ -13,12 +13,12 @@ struct ViewEntities: View {
     var body: some View {
         
         ScrollView {
-            Text("Favorites")
-                .font(.custom("Nunito", size: 36, relativeTo: .title))
-            ForEach(vm.savedFavorites.sorted(by: { $0.timestamp ?? Date() > $1.timestamp ?? Date() }), id: \.self) { entity in
-                Text(entity.entry ?? "nothing")
-                Text("\(entity.timestamp ?? Date()).")
-            }
+//            Text("Favorites")
+//                .font(.custom("Nunito", size: 36, relativeTo: .title))
+//            ForEach(vm.savedFavorites.sorted(by: { $0.timestamp ?? Date() > $1.timestamp ?? Date() }), id: \.self) { entity in
+//                Text(entity.entry ?? "nothing")
+//                Text("\(entity.timestamp ?? Date()).")
+//            }
             Text("History")
                 .font(.custom("Nunito", size: 36, relativeTo: .title))
             ForEach(vm1.savedHistory.sorted(by: { $0.timestamp ?? Date() > $1.timestamp ?? Date() }), id: \.self) { entity in

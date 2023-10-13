@@ -1,15 +1,16 @@
 //
-//  SearchBar.swift
+//  Searchbarfix.swift
 //  spanish-thesaurus-swiftUI
 //
-//  Created by Beau Salgado on 8/25/23.
+//  Created by Beau Salgado on 10/13/23.
 //
+
 
 import SwiftUI
 
-struct SearchBar: View {
+struct SearchBarfix: View {
     @Binding var searchText: String
-    @FocusState.Binding var isFocused: Bool
+    @Binding var isFocused: Bool
     @Binding var showAutocomplete: Bool
     @Binding var showResult: Bool
     @Binding var stillShowResult: Bool
@@ -28,7 +29,7 @@ struct SearchBar: View {
                         showAutocomplete = false
                         showResult = true
                     })
-                    .focused($isFocused)
+                //    .focused($isFocused)
                     .autocapitalization(.none)
                     .font(.custom("Nunito", size: 16))
                     .fontWeight(.semibold)
@@ -84,15 +85,15 @@ struct SearchBar: View {
                 .background(Color("strokeSearch"))
                 .padding([.top], 5)
         }.padding(.top, 25)
-           
+            .background(Color.red)
     }
 }
 
 
 
 
-//struct SearchBar1_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchBar(searchText: .constant("false"), isFocused: <#FocusState<Bool>.Binding#>, showAutocomplete: .constant(false), showResult: .constant(false), stillShowResult: .constant(false))
-//    }
-//}
+struct SearchBarfix_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchBarfix(searchText: .constant("false"), isFocused: .constant(false), showAutocomplete: .constant(false), showResult: .constant(false), stillShowResult: .constant(false))
+    }
+}

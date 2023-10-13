@@ -64,7 +64,6 @@ class CoreDataHistory: ObservableObject {
                 container.viewContext.delete(entry)
             }
             saveData()
-            savedHistory.removeAll { $0.entry == text }
         } catch let error {
             print("Error deleting history: \(error)")
         }

@@ -25,6 +25,8 @@ class DeveloperPreview {
     init (){}
     
     let wordVM = EntryDataService()
+    let cdFavorites = CoreDataFavorites()
+    let cdHistory = CoreDataHistory()
 
     
  

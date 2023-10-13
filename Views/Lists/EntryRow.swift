@@ -10,7 +10,7 @@ import SwiftUI
 struct EntryRow: View {
     @State var likedFill: Bool = false
     @State var liked: Bool = false
-    @StateObject var coredata = CoreDataFavorites()
+    @EnvironmentObject var coredata: CoreDataFavorites
     let data: EntryModel
 
 
@@ -105,7 +105,7 @@ struct EntryRow: View {
 
 struct EntryRowView_Previews: PreviewProvider {
     static var previews: some View {
-        EntryRow(data: dev.entry)
+        EntryRow(data: dev.entry).environmentObject(dev.cdFavorites)
     }
 }
 

@@ -46,6 +46,9 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
 
             Index()
+            .environmentObject(dev.wordVM)
+            .environmentObject(dev.cdHistory)
+            .environmentObject(dev.cdFavorites)
         
     }
 }

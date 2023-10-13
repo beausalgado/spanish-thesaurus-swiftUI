@@ -10,25 +10,27 @@ import SwiftUI
 @main
 struct spanish_thesaurus_swiftUIApp: App {
     @StateObject private var vm = EntryDataService()
-    @StateObject private var coredataVM = CoreDataFavorites()
+    @StateObject private var cdFavorites = CoreDataFavorites()
+    @StateObject private var cdHistory = CoreDataHistory()
     var body: some Scene {
 
-//        WindowGroup {
-//
-//                Index()
-//                .environmentObject(vm)
-//                .environmentObject(coredataVM)
-//
-//
-//        }
+        WindowGroup {
+
+                Index()
+                .environmentObject(vm)
+                .environmentObject(cdFavorites)
+                .environmentObject(cdHistory)
+
+
+        }
         
         
 
 //        WindowGroup {
 //            SearchTab().environmentObject(vm)
 //        }
-        WindowGroup {
-            FavoritesList()
-        }
+//        WindowGroup {
+//            FavoritesList()
+//        }
     }
 }

@@ -28,15 +28,6 @@ struct HomeHeader: View {
                         
                     }
             }
-            Button(action: {
-                withAnimation {
-                    arrowBoolean.toggle()
-                }
-             
-            }, label: {
-             Text("hello")
-            })
-
             Spacer()
             Button(action: {
                 showSheet.toggle()
