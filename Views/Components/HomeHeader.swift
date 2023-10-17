@@ -49,7 +49,7 @@ struct HomeHeader: View {
             
             
             
-        } .animation(.easeInOut(duration: 0.7))
+        } //.animation(.easeInOut(duration: 0.7))
        
     }
 }

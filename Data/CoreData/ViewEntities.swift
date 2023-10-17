@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ViewEntities: View {
-    @StateObject var vm = CoreDataFavorites()
-    @StateObject var vm1 = CoreDataHistory()
+    @EnvironmentObject var vm: CoreDataFavorites
+    @EnvironmentObject var vm1: CoreDataHistory
     var body: some View {
         
         ScrollView {
@@ -45,6 +45,6 @@ struct ViewEntities: View {
     }
 }
 
-#Preview {
-    ViewEntities()
-}
+//#Preview {
+//    ViewEntities().environmentObject(dev.cdFavorites).environmentObject(dev.cdHistory)
+//}

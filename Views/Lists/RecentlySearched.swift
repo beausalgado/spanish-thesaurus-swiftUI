@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RecentlySearched: View {
-    let testArray = ["banco", "cuenco", "algarabía", "casona"]
     @EnvironmentObject var vm: CoreDataHistory
     var body: some View {
         
@@ -40,45 +39,55 @@ extension RecentlySearched {
                 .frame(maxWidth:.infinity,
                        alignment:.leading)
             Spacer()
-            Text("Ver todos")
-                .font(.custom("Nunito", size: 16, relativeTo: .headline))
-                .fontWeight(.semibold)
-                .foregroundColor(Color("gray"))
+            
+            if !vm.showAll {
+                Button(action: {
+                    vm.showAll = true
+                    vm.fetchHistory()
+                }) {
+                    Text("Ver todos")
+                        .font(.custom("Nunito", size: 16, relativeTo: .headline))
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color("gray"))
+                }}
+
             
         }
+        
     }
     
 }
 
 extension RecentlySearched {
     private var listOfHistory: some View {
-
+        
         VStack {
-            ForEach(vm.savedHistory.sorted(by: { $0.timestamp ?? Date() > $1.timestamp ?? Date() }), id: \.self){ entity in
-                    
+            ForEach(vm.savedHistory, id: \.self){ entity in
+                
                 HStack(spacing:0) {
                     HStack {
-                            Text(entity.entry ?? "")
-                                .font(.custom("Nunito", size: 16, relativeTo: .body))
-                                .fontWeight(.bold)
-                            Spacer()
- 
-                        }
+                        Text(entity.entry ?? "")
+                            .font(.custom("Nunito", size: 16, relativeTo: .body))
+                            .fontWeight(.bold)
+                        Spacer()
+                        
+                    }
                     .background(Color.white)
                     .onTapGesture {
-
+                        
                     }
                     Xmark(entry: entity.entry ?? "", vm: _vm)
+                    
                 }
-             //   if !vm.isLastFavorite(entity) {
+                if !vm.isLastHistory(entity) {
                     Divider()
                         .overlay(Color("divider"))
                         .padding([.top, .bottom], 5)
- 
-               // }
+                    
+                }
             }
+
+      //      Text("vm: \(vm.savedHistory.description)")
         }
     }
 }
-
-

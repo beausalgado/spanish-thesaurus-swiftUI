@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Tabs: View {
     
+    @EnvironmentObject var vm: CoreDataHistory
     @State var selectedTab: Int = 0
     @State var clicked = true
     
@@ -30,6 +31,7 @@ struct Tabs: View {
                     Text("Favorites")
                 }
                 .tag(1)
+
             SearchTab()
                 .tabItem {
                     Image(systemName: "magnifyingglass")

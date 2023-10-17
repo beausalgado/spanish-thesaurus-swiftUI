@@ -196,7 +196,7 @@ extension FavoritesList {
             
             
             
-        } .animation(.easeInOut(duration: 0.2))
+        }// .animation(.easeInOut(duration: 0.2))
        
     }
 }

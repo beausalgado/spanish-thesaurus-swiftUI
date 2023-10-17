@@ -13,6 +13,7 @@ class CoreDataHistory: ObservableObject {
 
     let container: NSPersistentContainer
     @Published var savedHistory: [HistoryEntity] = []
+    @Published var showAll = false
 
     init () {
         container = NSPersistentContainer(name: "FavoritesAndHistoryContainer")
@@ -29,20 +30,45 @@ class CoreDataHistory: ObservableObject {
     func fetchHistory() {
         let request = NSFetchRequest<HistoryEntity>(entityName: "HistoryEntity")
         do {
-            savedHistory = try container.viewContext.fetch(request)
+            var fetchedHistory = try container.viewContext.fetch(request)
+            fetchedHistory.sort { $0.timestamp ?? Date() > $1.timestamp ?? Date() }
+            if showAll {
+                savedHistory = fetchedHistory
+            } else {
+                savedHistory = Array(fetchedHistory.prefix(2))
+                
+            }
+
         } catch let error {
             print("Error fetching. \(error)")
         }
-
     }
+    
     func isInHistory(text: String) -> Bool {
         return savedHistory.contains { $0.entry?.localizedCaseInsensitiveCompare(text) == .orderedSame }
     }
+    
+    func isLastHistory(_ history: HistoryEntity) -> Bool {
+        // Sort the savedHistory array by timestamp (oldest first)
+        let sortedHistory = savedHistory.sorted { ($0.timestamp ?? Date()) < ($1.timestamp ?? Date()) }
+
+        guard let firstIndex = sortedHistory.firstIndex(of: history) else {
+            return false // The item is not in the sorted array
+        }
+
+        return firstIndex == 0 // Check if it's the oldest item
+    }
 
     func addHistory(text: String) {
+        if savedHistory.count >= 30 {
+            let sortedHistory = savedHistory.sorted { ($0.timestamp ?? Date()) < ($1.timestamp ?? Date()) }
+            if let oldestHistory = sortedHistory.first {
+                container.viewContext.delete(oldestHistory)
+            }
+        }
+        
         let newHistory = HistoryEntity(context: container.viewContext)
         newHistory.timestamp = Date()
-        newHistory.favorited = true
         newHistory.entry = text
         saveData()
     }

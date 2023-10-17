@@ -54,7 +54,6 @@ class CoreDataFavorites: ObservableObject {
     func addFavorite(text: String) {
         let newFavorite = FavoritesEntity(context: container.viewContext)
         newFavorite.timestamp = Date()
-        newFavorite.favorited = true
         newFavorite.entry = text
         saveData()
     }

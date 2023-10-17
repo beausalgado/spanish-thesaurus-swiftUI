@@ -30,7 +30,10 @@ struct spanish_thesaurus_swiftUIApp: App {
 //            SearchTab().environmentObject(vm)
 //        }
 //        WindowGroup {
-//            FavoritesList()
+//            ViewEntities()
+//                            .environmentObject(vm)
+//                            .environmentObject(cdFavorites)
+//                            .environmentObject(cdHistory)
 //        }
     }
 }
