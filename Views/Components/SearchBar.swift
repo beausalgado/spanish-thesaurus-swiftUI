@@ -28,6 +28,9 @@ struct SearchBar: View {
                     TextField("Buscar", text: $searchText, onCommit: {
                         showAutocomplete = false
                         showResult = true
+                        if (!cdhistory.isInHistory(text: searchText)){
+                            cdhistory.addHistory(text: searchText)
+                        }
                     })
                     .focused($isFocused)
                     .autocapitalization(.none)
@@ -85,7 +88,7 @@ struct SearchBar: View {
             Divider()
                 .frame(height: 0.1)
                 .background(Color("strokeSearch"))
-                .padding([.top], 5)
+                .padding([.top], 20)
         }.padding(.top, 25)
            
     }

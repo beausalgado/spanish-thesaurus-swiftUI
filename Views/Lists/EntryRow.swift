@@ -116,7 +116,7 @@ extension EntryRow {
     private var entryTitle: some View {
         HStack {
             Text(data.entry)
-                .font(.custom("Nunito", size: 35, relativeTo: .body))
+                .font(.custom("Nunito", size: 24, relativeTo: .body))
                 .fontWeight(.bold)
                 .padding([.bottom], 8)
             Spacer(minLength: 0)

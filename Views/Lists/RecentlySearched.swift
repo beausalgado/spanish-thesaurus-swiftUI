@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RecentlySearched: View {
     @EnvironmentObject var vm: CoreDataHistory
+    @EnvironmentObject var vmMongo: EntryDataService
+    @State var entrysearch: String = ""
     var body: some View {
         
         
@@ -25,7 +27,7 @@ struct RecentlySearched: View {
 }
 struct recentSearches_Previews: PreviewProvider {
     static var previews: some View {
-        RecentlySearched().environmentObject(dev.cdHistory)
+        RecentlySearched().environmentObject(dev.cdHistory).environmentObject(dev.wordVM)
     }
 }
 
@@ -72,9 +74,16 @@ extension RecentlySearched {
                         Spacer()
                         
                     }
-                    .background(Color.white)
+                    .background(Color.blue)
                     .onTapGesture {
-                        
+                     vmMongo.searchedWord = entity.entry ?? ""
+                        let entrymodel = vmMongo.words
+                        print(entrymodel)
+                        if let filterVM = vmMongo.words.first(where: { $0.entry.lowercased() == entity.entry!.lowercased() }) {
+                            print(filterVM)
+                            EntryRow(data: filterVM)
+                        }
+                       
                     }
                     Xmark(entry: entity.entry ?? "", vm: _vm)
                     

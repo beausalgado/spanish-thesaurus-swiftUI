@@ -12,6 +12,7 @@ import Combine
 
 class EntryDataService: ObservableObject {
     @Published var words: [EntryModel] = []
+    @Published var randomWord: [EntryModel] = []
     @Published var searchedWord: String = ""
     @Published var isLoading = true
     
@@ -22,6 +23,7 @@ class EntryDataService: ObservableObject {
     init(){
         print("init")
         searchWordsPublisher()
+        getRandom()
         
     }
     
@@ -60,6 +62,30 @@ class EntryDataService: ObservableObject {
         
 //        printCancellableCount()
         
+    }
+    
+     func getRandom() {
+        guard let url = URL(string: "http://localhost:8081/entries/random*")
+        else {return}
+        wordSubscription = NetworkingManager.download(url: url)
+            .decode(type: [EntryModel].self , decoder: JSONDecoder())
+            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedEntry) in
+                print("getWords")
+                self?.randomWord = returnedEntry
+                self?.wordSubscription?.cancel()
+               
+            })
+     
+        
+//        printCancellableCount()
+        
+    }
+    
+    func isLastItem(_ entry: EntryModel) -> Bool {
+        if let lastIndex = words.lastIndex(of: entry) {
+            return lastIndex == words.count - 1
+        }
+        return false
     }
     
 //    private func printCancellableCount() {

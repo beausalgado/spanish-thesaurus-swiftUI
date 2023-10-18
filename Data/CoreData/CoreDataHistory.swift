@@ -32,10 +32,11 @@ class CoreDataHistory: ObservableObject {
         do {
             var fetchedHistory = try container.viewContext.fetch(request)
             fetchedHistory.sort { $0.timestamp ?? Date() > $1.timestamp ?? Date() }
-            if showAll {
+            if showAll || fetchedHistory.count < 10 {
                 savedHistory = fetchedHistory
+                showAll = true 
             } else {
-                savedHistory = Array(fetchedHistory.prefix(2))
+                savedHistory = Array(fetchedHistory.prefix(10))
                 
             }
 

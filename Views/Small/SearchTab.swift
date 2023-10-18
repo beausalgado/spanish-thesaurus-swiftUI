@@ -17,6 +17,7 @@ struct SearchTab: View {
     @State var showRecents: Bool = true
     @State var stillShowResult: Bool = false
     @FocusState var isFocused: Bool
+    @State var lastline = false
     var body: some View {
         VStack (spacing:0) {
             
@@ -25,7 +26,7 @@ struct SearchTab: View {
             ScrollView {
                 
                 if searchText.isEmpty  {
-                    RecentlySearched().padding([.top])
+                    recentlysearched.padding([.top])
                 }
                 
                 if showAutocomplete && !searchText.isEmpty {
@@ -97,24 +98,107 @@ extension SearchTab {
                 ProgressView()
             } else {
                 ForEach(vm.words, id:\.self) { entry in
-                    AutocompleteResults(data: entry)
-                        .onTapGesture {
-                            searchText = entry.entry
-                            showAutocomplete = false
-                            isFocused = false
-                            stillShowResult = true
-                            showResult = true
-                            if (!coredata.isInHistory(text: searchText)){
-                                coredata.addHistory(text: entry.entry)
+                    
+                    if vm.isLastItem(entry) {
+                        AutocompleteResults(data: entry, lastline: true)
+                            .onTapGesture {
+                                searchText = entry.entry
+                                showAutocomplete = false
+                                isFocused = false
+                                stillShowResult = true
+                                showResult = true
+                                if (!coredata.isInHistory(text: searchText)){
+                                    coredata.addHistory(text: entry.entry)
+                                }
+                                
                             }
-
-                        }
+                    } else {
+                        AutocompleteResults(data: entry, lastline: false)
+                            .onTapGesture {
+                                searchText = entry.entry
+                                showAutocomplete = false
+                                isFocused = false
+                                stillShowResult = true
+                                showResult = true
+                                if (!coredata.isInHistory(text: searchText)){
+                                    coredata.addHistory(text: entry.entry)
+                                }
+                                
+                            }
+                    }
+                    
                 }
             }
-
+            
         }
     }
     
 }
 
+extension SearchTab {
+
+      private var recentlysearched: some View {
+            
+            
+            VStack {
+                
+                HStack {
+                    Text("Recientes")
+                        .font(.custom("Nunito", size: 24, relativeTo: .headline))
+                        .fontWeight(.bold)
+                        .frame(maxWidth:.infinity,
+                               alignment:.leading)
+                    Spacer()
+                    
+                    if !coredata.showAll {
+                        Button(action: {
+                            coredata.showAll = true
+                            coredata.fetchHistory()
+                        }) {
+                            Text("Ver todos")
+                                .font(.custom("Nunito", size: 16, relativeTo: .headline))
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color("gray"))
+                        }}
+
+                    
+                }
+                    .padding([.bottom], 15)
+                
+                
+                ForEach(coredata.savedHistory, id: \.self){ entity in
+                    
+                    HStack(spacing:0) {
+                        HStack {
+                            Text(entity.entry ?? "")
+                                .font(.custom("Nunito", size: 16, relativeTo: .body))
+                                .fontWeight(.bold)
+                            Spacer()
+                            
+                        }
+                      //  .background(Color.blue)
+                        .onTapGesture {
+                            searchText = entity.entry ?? ""
+                            showAutocomplete = false
+                            isFocused = false
+                            stillShowResult = true
+                            showResult = true
+
+                        }
+                        Xmark(entry: entity.entry ?? "", vm: _coredata)
+                        
+                    }
+                    if !coredata.isLastHistory(entity) {
+                        Divider()
+                            .overlay(Color("divider"))
+                            .padding([.top, .bottom], 5)
+                        
+                    }
+                }
+            }
+
+        }
+        
+    }
+    
 

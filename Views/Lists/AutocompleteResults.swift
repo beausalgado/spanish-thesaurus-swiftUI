@@ -10,6 +10,7 @@ import SwiftUI
 struct AutocompleteResults: View {
     
     let data: EntryModel
+    @State var lastline: Bool = false
     var body: some View {
         VStack {
             
@@ -32,9 +33,13 @@ struct AutocompleteResults: View {
                 
                 
             }.background()
-            Divider()
-                .overlay(Color("divider"))
-                .padding([.top, .bottom], 5)
+            
+            if !lastline {
+                Divider()
+                    .overlay(Color("divider"))
+                    .padding([.top, .bottom], 5)
+            }
+
             
             
         }
