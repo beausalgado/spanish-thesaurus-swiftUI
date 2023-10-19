@@ -13,63 +13,60 @@ struct Sheet: View {
     
     var body: some View {
         
-        ZStack {
-            VStack {
-                
-                Capsule()
-                     .fill(Color.white)
-                     .frame(width: 38, height: 4)
-                     .padding([.bottom], 20)
-                
-                    Toggle(isOn: $offline,
-                           label: {
-                        HStack {
-                            Image(systemName: "moon.fill")
-                                .font(.system(size: 20))
-                                .padding([.trailing], 10)
-                            Text("Modo oscuro")
-                                .font(.body)
-                            Spacer(minLength: 0)
-                        }
-
+            ZStack {
+                VStack {
+                    
+                    Capsule()
+                         .fill(Color.white)
+                         .frame(width: 38, height: 4)
+                         .padding([.bottom], 20)
+                         .padding([.top], 6)
+                    
+                        Toggle(isOn: $offline,
+                               label: {
+                            HStack {
+                                Image(systemName: "moon.fill")
+                                    .font(.system(size: 20))
+                                    .padding([.trailing], 10)
+                                Text("Modo oscuro")
+                                    .font(.body)
+                                Spacer(minLength: 0)
+                            }
+    
+                            
+                        })
+                    Divider()
+                        .overlay(.white)
+                        .padding([.leading, .trailing], 25)
+                        .padding([.top, .bottom], 5)
+//                                   Divider()
+//                                        .overlay(.white)
+//                                        .padding([.leading, .trailing], 25)
+//                                        .padding([.top, .bottom], 5)
+                    
+    //                Divider()
+    //                    .overlay(.white)
+    //                    .padding([.leading, .trailing], 25)
+    //                    .padding([.top, .bottom], 5)
+    //                
+    //                HStack{
+    //                    Image(systemName: "gearshape.fill")
+    //                        .font(.system(size: 20))
+    //                        .padding([.trailing], 10)
+    //                    Text("Configuración")
+    //                        .font(.body)
+    //                    Spacer(minLength: 0)
+    //                }
                         
-                    })
-                Divider()
-                    .overlay(.white)
-                    .padding([.leading, .trailing], 25)
-                    .padding([.top, .bottom], 5)
-                HStack{
-                    Image(systemName: "info.circle.fill")
-                        .font(.system(size: 20))
-                        .padding([.trailing], 10)
-                    Text("Info")
-                        .font(.body)
-                    Spacer(minLength: 0)
-                }
-                
-//                Divider()
-//                    .overlay(.white)
-//                    .padding([.leading, .trailing], 25)
-//                    .padding([.top, .bottom], 5)
-//                
-//                HStack{
-//                    Image(systemName: "gearshape.fill")
-//                        .font(.system(size: 20))
-//                        .padding([.trailing], 10)
-//                    Text("Configuración")
-//                        .font(.body)
-//                    Spacer(minLength: 0)
-//                }
-                    
-                Spacer()
-                    
+                    Spacer()
+                        
 
-                
-            }
-            .foregroundColor(.white)
-            .padding([.leading, .trailing], 25)
-                
-        }.background(Color("sheet").ignoresSafeArea(.all))
+                    
+                }
+                .foregroundColor(.white)
+                .padding([.leading, .trailing], 25)
+                    
+            }.background(Color("sheet").ignoresSafeArea(.all))
     
     }
     

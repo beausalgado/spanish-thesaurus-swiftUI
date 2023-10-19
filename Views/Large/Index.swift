@@ -47,8 +47,7 @@ struct HomeView_Previews: PreviewProvider {
 
             Index()
             .environmentObject(dev.wordVM)
-            .environmentObject(dev.cdHistory)
-            .environmentObject(dev.cdFavorites)
+            .environmentObject(dev.coredata)
         
     }
 }

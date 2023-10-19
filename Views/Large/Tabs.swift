@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Tabs: View {
     
-    @EnvironmentObject var vm: CoreDataHistory
+    @EnvironmentObject var vm: CoreData
     @State var selectedTab: Int = 0
     @State var clicked = true
     
@@ -24,20 +24,26 @@ struct Tabs: View {
                 }
                 .tag(0)
 
+            InfoPage()
+                .tabItem {
+                    Image(systemName: "info.circle")
+                    Text("Info")
+                }
+                .tag(1)
 
-            FavoritesList()
+            FavoritesTab()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Favorites")
                 }
-                .tag(1)
+                .tag(2)
 
             SearchTab()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
-                .tag(2)
+                .tag(3)
 
         }.accentColor(.black)
             .animation(.easeOut(duration: 0.2), value: selectedTab)
@@ -48,7 +54,6 @@ struct SouthTabs_Previews: PreviewProvider {
     static var previews: some View {
         Tabs()
             .environmentObject(dev.wordVM)
-            .environmentObject(dev.cdHistory)
-            .environmentObject(dev.cdFavorites)
+            .environmentObject(dev.coredata)
     }
 }

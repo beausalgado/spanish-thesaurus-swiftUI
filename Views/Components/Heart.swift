@@ -11,7 +11,7 @@ struct Heart: View {
     @State var likedFill: Bool = true
     @State var liked: Bool = true
     @State var entry: String = ""
-    @EnvironmentObject var vm: CoreDataFavorites
+    @EnvironmentObject var vm: CoreData
     var body: some View {
             ZStack {
                     Rectangle()
@@ -54,6 +54,6 @@ struct Heart: View {
 
 struct Heart_Previews: PreviewProvider {
     static var previews: some View {
-        Heart().environmentObject(dev.cdFavorites)
+        Heart().environmentObject(dev.coredata)
     }
 }

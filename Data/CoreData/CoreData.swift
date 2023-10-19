@@ -1,17 +1,19 @@
 //
-//  CoreDataHistory.swift
+//  CoreData.swift
 //  spanish-thesaurus-swiftUI
 //
-//  Created by Beau Salgado on 9/19/23.
+//  Created by Beau Salgado on 4/13/23.
 //
 
 import Foundation
 import CoreData
 
 
-class CoreDataHistory: ObservableObject {
+
+class CoreData: ObservableObject {
 
     let container: NSPersistentContainer
+    @Published var savedFavorites: [FavoritesEntity] = []
     @Published var savedHistory: [HistoryEntity] = []
     @Published var showAll = false
 
@@ -24,7 +26,15 @@ class CoreDataHistory: ObservableObject {
                 print("loaded successfully")
             }
         }
+        fetchFavorites()
         fetchHistory()
+    }
+    func isFavorite(text: String) -> Bool {
+        return savedFavorites.contains { $0.entry?.localizedCaseInsensitiveCompare(text) == .orderedSame }
+    }
+    
+    func isInHistory(text: String) -> Bool {
+        return savedHistory.contains { $0.entry?.localizedCaseInsensitiveCompare(text) == .orderedSame }
     }
     
     func fetchHistory() {
@@ -34,7 +44,7 @@ class CoreDataHistory: ObservableObject {
             fetchedHistory.sort { $0.timestamp ?? Date() > $1.timestamp ?? Date() }
             if showAll || fetchedHistory.count < 10 {
                 savedHistory = fetchedHistory
-                showAll = true 
+                showAll = true
             } else {
                 savedHistory = Array(fetchedHistory.prefix(10))
                 
@@ -45,8 +55,14 @@ class CoreDataHistory: ObservableObject {
         }
     }
     
-    func isInHistory(text: String) -> Bool {
-        return savedHistory.contains { $0.entry?.localizedCaseInsensitiveCompare(text) == .orderedSame }
+    func fetchFavorites() {
+        let request = NSFetchRequest<FavoritesEntity>(entityName: "FavoritesEntity")
+        do {
+            savedFavorites = try container.viewContext.fetch(request)
+        } catch let error {
+            print("Error fetching. \(error)")
+        }
+
     }
     
     func isLastHistory(_ history: HistoryEntity) -> Bool {
@@ -59,7 +75,25 @@ class CoreDataHistory: ObservableObject {
 
         return firstIndex == 0 // Check if it's the oldest item
     }
+    
+    func isLastFavorite(_ favorite: FavoritesEntity) -> Bool {
+        // Sort the savedFavorites array alphabetically by entry
+        let sortedFavorites = savedFavorites.sorted { ($0.entry ?? "") < ($1.entry ?? "") }
 
+        guard let lastIndex = sortedFavorites.firstIndex(of: favorite) else {
+            return false // The item is not in the sorted array
+        }
+
+        return lastIndex == sortedFavorites.count - 1
+    }
+
+    func addFavorite(text: String) {
+        let newFavorite = FavoritesEntity(context: container.viewContext)
+        newFavorite.timestamp = Date()
+        newFavorite.entry = text
+        saveFavoritesData()
+    }
+    
     func addHistory(text: String) {
         if savedHistory.count >= 30 {
             let sortedHistory = savedHistory.sorted { ($0.timestamp ?? Date()) < ($1.timestamp ?? Date()) }
@@ -71,14 +105,22 @@ class CoreDataHistory: ObservableObject {
         let newHistory = HistoryEntity(context: container.viewContext)
         newHistory.timestamp = Date()
         newHistory.entry = text
-        saveData()
+        saveHistoryData()
     }
 
+
+    func deleteFavorite(indexSet: IndexSet) {
+        guard let index = indexSet.first else {return}
+        let entity = savedFavorites[index]
+        container.viewContext.delete(entity)
+        saveFavoritesData()
+    }
+    
     func deleteHistory(indexSet: IndexSet) {
         guard let index = indexSet.first else {return}
         let entity = savedHistory[index]
         container.viewContext.delete(entity)
-        saveData()
+        saveHistoryData()
     }
     
     func deleteHistoryByEntry(text: String) {
@@ -90,19 +132,54 @@ class CoreDataHistory: ObservableObject {
             for entry in matchingEntries {
                 container.viewContext.delete(entry)
             }
-            saveData()
+            saveHistoryData()
         } catch let error {
             print("Error deleting history: \(error)")
         }
     }
+    
+    func deleteFavoritesByEntry(text: String) {
+        let request = NSFetchRequest<FavoritesEntity>(entityName: "FavoritesEntity")
+        request.predicate = NSPredicate(format: "entry == %@", text)
+
+        do {
+            let matchingEntries = try container.viewContext.fetch(request)
+            for entry in matchingEntries {
+                container.viewContext.delete(entry)
+            }
+            saveFavoritesData()
+        } catch let error {
+            print("Error deleting history: \(error)")
+        }
+    }
+    
+
+    
     func deleteAllHistory() {
         for entity in savedHistory {
             container.viewContext.delete(entity)
         }
-        saveData()
+        saveHistoryData()
+    }
+    
+    
+    func deleteAllFavorites() {
+        for entity in savedFavorites {
+            container.viewContext.delete(entity)
+        }
+        saveFavoritesData()
     }
 
-    func saveData(){
+    func saveFavoritesData(){
+        do {
+            try container.viewContext.save()
+            fetchFavorites()
+        } catch let error {
+            print("Error fetching. \(error)")
+        }
+
+    }
+    func saveHistoryData(){
         do {
             try container.viewContext.save()
             fetchHistory()

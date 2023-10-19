@@ -11,7 +11,7 @@ struct EntryRowFavorites: View {
     @State var likedFill: Bool = true
     @State var liked: Bool = true
     @State var deleteWord: String = ""
-    @EnvironmentObject var coredata: CoreDataFavorites
+    @EnvironmentObject var coredata: CoreData
     let data: EntryModel
 
 
@@ -106,7 +106,7 @@ struct EntryRowFavorites: View {
 
 struct EntryRowFavoritesView_Previews: PreviewProvider {
     static var previews: some View {
-        EntryRowFavorites(data: dev.entry).environmentObject(dev.cdFavorites)
+        EntryRowFavorites(data: dev.entry).environmentObject(dev.coredata)
     }
 }
 

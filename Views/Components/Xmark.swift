@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Xmark: View {
     @State var entry: String = ""
-    @EnvironmentObject var vm: CoreDataHistory
+    @EnvironmentObject var vm: CoreData
     var body: some View {
             ZStack {
                     Rectangle()

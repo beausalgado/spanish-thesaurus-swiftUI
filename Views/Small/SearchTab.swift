@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SearchTab: View {
     @EnvironmentObject var vm: EntryDataService
-    @EnvironmentObject var coredata: CoreDataHistory
+    @EnvironmentObject var coredata: CoreData
     @State var searchText: String = ""
     @State var showAutocomplete: Bool = false
     @State var showResult: Bool = false
@@ -62,8 +62,7 @@ struct Search_Previews: PreviewProvider {
     static var previews: some View {
         SearchTab()
             .environmentObject(dev.wordVM)
-            .environmentObject(dev.cdHistory)
-            .environmentObject(dev.cdFavorites)
+            .environmentObject(dev.coredata)
     }
 }
 
@@ -80,9 +79,8 @@ extension SearchTab {
                 }
                 
             } else {
-                Spacer()
-                ProgressView()
-                    .padding(100)
+                
+     ErrorPage(palabraNoEncontrada: $searchText)
                    
             }
         }

@@ -14,7 +14,7 @@ struct SearchBar: View {
     @Binding var showResult: Bool
     @Binding var stillShowResult: Bool
     @EnvironmentObject var vm: EntryDataService
-    @EnvironmentObject var cdhistory: CoreDataHistory
+    @EnvironmentObject var coredata: CoreData
     
     var body: some View {
         VStack (spacing:0){
@@ -28,8 +28,8 @@ struct SearchBar: View {
                     TextField("Buscar", text: $searchText, onCommit: {
                         showAutocomplete = false
                         showResult = true
-                        if (!cdhistory.isInHistory(text: searchText)){
-                            cdhistory.addHistory(text: searchText)
+                        if (!coredata.isInHistory(text: searchText)){
+                            coredata.addHistory(text: searchText)
                         }
                     })
                     .focused($isFocused)
@@ -47,8 +47,8 @@ struct SearchBar: View {
                             showResult = false
                             showAutocomplete = true
                         }
-                        cdhistory.showAll = false
-                        cdhistory.saveData()
+                        coredata.showAll = false
+                        coredata.saveHistoryData()
                     }
                     .overlay(
                         Image(systemName: "xmark.circle.fill")

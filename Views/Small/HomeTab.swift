@@ -57,8 +57,7 @@ struct HomeTab: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         HomeTab().environmentObject(dev.wordVM)
-            .environmentObject(dev.cdHistory)
-            .environmentObject(dev.cdFavorites)
+            .environmentObject(dev.coredata)
     }
 }
 
