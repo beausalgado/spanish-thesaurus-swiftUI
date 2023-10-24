@@ -28,7 +28,7 @@ struct InfoPage: View {
                 Spacer()
             }
 
-            Text("This is an app that I created in 2023 as a portfolio project. I didn’t know any Swift a few months ago, but I wanted to learn and implement a new language from scratch as well gain more confidence in my ability to code.")
+            Text("This is an app that I created in 2023 as a portfolio project. I didn’t know any Swift a few months ago, but I wanted to learn and implement a new language from scratch as well as gain more confidence in my ability to code.")
                 .padding([.top])
                 .padding([.leading, .trailing], 30)
 

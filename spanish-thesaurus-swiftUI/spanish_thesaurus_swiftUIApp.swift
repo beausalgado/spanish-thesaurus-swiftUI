@@ -20,13 +20,9 @@ struct spanish_thesaurus_swiftUIApp: App {
                 .environmentObject(coredata)
 
 
+
         }
         
-//        WindowGroup {
-//            ViewEntities()
-//                            .environmentObject(vm)
-//                            .environmentObject(coredata)
-//                            .environmentObject(cdHistory)
-//        }
+
     }
 }

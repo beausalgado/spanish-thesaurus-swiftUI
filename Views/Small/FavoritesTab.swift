@@ -154,7 +154,7 @@ extension FavoritesTab {
                     .resizable()
                     .frame(width: 40, height: 40)
                     //.padding([.leading], 20)
-                    .opacity(0.6)
+                    .opacity(0.85)
                     .padding([.bottom], 12)
             } else {
                 

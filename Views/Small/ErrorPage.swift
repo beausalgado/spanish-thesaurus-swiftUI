@@ -17,7 +17,7 @@ struct ErrorPage: View {
 }
 
 #Preview {
-    ErrorPage(palabraNoEncontrada: .constant("test"))
+    ErrorPage(palabraNoEncontrada: .constant("gagaga"))
 }
 
 

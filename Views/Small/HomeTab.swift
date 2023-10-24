@@ -19,7 +19,6 @@ struct HomeTab: View {
             Divider()
                 .frame(height: 0.1)
                 .background(Color("strokeSearch"))
-            VStack {
                 Text("Sinónimo del día")
                     .font(.custom("Nunito", size: 36, relativeTo: .title))
                     .fontWeight(.bold)
@@ -27,26 +26,25 @@ struct HomeTab: View {
                            alignment:.topLeading)
                     .padding([.bottom], 12)
                     .padding([.top], 25)
-                ScrollView {
+                    .padding([.leading, .trailing], 30)
+            ScrollView {
+                VStack {
 
 
-                    if let filterVM = data.randomWord.first {
-                        EntryRow(data:filterVM)
+                        if let filterVM = data.randomWord.first {
+                            EntryRow(data:filterVM)
+                        }
+              
+                    
+                        
+                        Spacer(minLength: 0)
                     }
-          
-
-                //    Text("vm: \(data.randomWord.description)")
-                    
-                    
-                    
-                    Spacer(minLength: 0)
-                }                .refreshable {
-                    data.getRandom()
+                        
                 }
-                
-               
-            }.padding([.leading, .trailing], 30)
-
+                    .padding([.leading, .trailing], 30)
+                    .refreshable {
+                        data.getRandom()
+            }
             
         }
 
@@ -105,112 +103,3 @@ extension HomeTab {
     }
 }
 
-//extension HomeTab {
-//    private var recentlySearched: some View {
-//      VStack  {
-//            
-//            HStack {
-//                Text("Búsquedas recientes")
-//                    .font(.custom("Nunito", size: 24, relativeTo: .headline))
-//                    .fontWeight(.bold)
-//                    .frame(maxWidth:.infinity,
-//                           alignment:.leading)
-//                Spacer()
-//                Text("Ver más")
-//                    .font(.custom("Nunito", size: 16, relativeTo: .headline))
-//                    .fontWeight(.semibold)
-//                    .foregroundColor(Color("gray"))
-//
-//            }
-//            .padding([.top])
-//            .padding([.bottom], 15)
-//            
-//            HStack {
-//                VStack(alignment: .leading) {
-//                    Text("banco")
-//                        .font(.custom("Nunito", size: 16, relativeTo: .body))
-//                        .fontWeight(.bold)
-//                    Text("hace 1 día")
-//                        .font(.custom("Nunito", size: 12, relativeTo: .body))
-//                        .fontWeight(.semibold)
-//                        .foregroundColor(Color("gray"))
-//                    
-//                }
-//               Spacer()
-//                Image(systemName: "arrow.right")
-//                    .font(.system(size: 16))
-//     
-//
-//            }
-//            Divider()
-//                .overlay(Color("divider"))
-//                .padding([.top, .bottom], 5)
-//            
-//            HStack {
-//                VStack(alignment: .leading) {
-//                    Text("algarabía")
-//                        .font(.custom("Nunito", size: 16, relativeTo: .body))
-//                        .fontWeight(.bold)
-//                    Text("hace 2 días")
-//                        .font(.custom("Nunito", size: 12, relativeTo: .body))
-//                        .fontWeight(.semibold)
-//                        .foregroundColor(Color("gray"))
-//                    
-//                }
-//               Spacer()
-//                Image(systemName: "arrow.right")
-//                    .font(.system(size: 16))
-//     
-//
-//            }
-//            Divider()
-//                .overlay(Color("divider"))
-//                .padding([.top, .bottom], 5)
-//            
-//            
-//            HStack {
-//                VStack(alignment: .leading) {
-//                    Text("cuenco")
-//                        .font(.custom("Nunito", size: 16, relativeTo: .body))
-//                        .fontWeight(.bold)
-//                    Text("hace 5 días")
-//                        .font(.custom("Nunito", size: 12, relativeTo: .body))
-//                        .fontWeight(.semibold)
-//                        .foregroundColor(Color("gray"))
-//                    
-//                }
-//               Spacer()
-//                Image(systemName: "arrow.right")
-//                    .font(.system(size: 16))
-//     
-//
-//            }
-//            Divider()
-//                .overlay(Color("divider"))
-//                .padding([.top, .bottom], 5)
-//            
-//            HStack {
-//                VStack(alignment: .leading) {
-//                    Text("casona")
-//                        .font(.custom("Nunito", size: 16, relativeTo: .body))
-//                        .fontWeight(.bold)
-//                    Text("el 16/01/23")
-//                        .font(.custom("Nunito", size: 12, relativeTo: .body))
-//                        .fontWeight(.semibold)
-//                        .foregroundColor(Color("gray"))
-//                    
-//                }
-//               Spacer()
-//                Image(systemName: "arrow.right")
-//                    .font(.system(size: 16))
-//     
-//
-//            }
-//
-//            
-//            
-//
-//            
-//      }
-//    }
-//}

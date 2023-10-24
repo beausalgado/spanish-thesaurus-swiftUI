@@ -23,16 +23,7 @@ struct AutocompleteResults: View {
                 Spacer()
                 
                 
-                
-                
-                
-                
-                
-   //             Text("\(String(describing: data))")
-                
-                
-                
-            }.background()
+            }.background(Color.white.opacity(0.001))
             
             if !lastline {
                 Divider()

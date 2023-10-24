@@ -81,7 +81,7 @@
 //                        print(entrymodel)
 //                        if let filterVM = vmMongo.words.first(where: { $0.entry.lowercased() == entity.entry!.lowercased() }) {
 //                            print(filterVM)
-//                            EntryRow(data: filterVM)
+//
 //                        }
 //                       
 //                    }

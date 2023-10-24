@@ -10,6 +10,7 @@ import SwiftUI
 struct Sheet: View {
     
     @State private var offline: Bool = false
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         
@@ -19,7 +20,7 @@ struct Sheet: View {
                     Capsule()
                          .fill(Color.white)
                          .frame(width: 38, height: 4)
-                         .padding([.bottom], 20)
+                         .padding([.bottom])
                          .padding([.top], 6)
                     
                         Toggle(isOn: $offline,
@@ -27,7 +28,7 @@ struct Sheet: View {
                             HStack {
                                 Image(systemName: "moon.fill")
                                     .font(.system(size: 20))
-                                    .padding([.trailing], 10)
+                                    .padding([.trailing], 8)
                                 Text("Modo oscuro")
                                     .font(.body)
                                 Spacer(minLength: 0)
@@ -37,26 +38,8 @@ struct Sheet: View {
                         })
                     Divider()
                         .overlay(.white)
-                        .padding([.leading, .trailing], 25)
-                        .padding([.top, .bottom], 5)
-//                                   Divider()
-//                                        .overlay(.white)
-//                                        .padding([.leading, .trailing], 25)
-//                                        .padding([.top, .bottom], 5)
-                    
-    //                Divider()
-    //                    .overlay(.white)
-    //                    .padding([.leading, .trailing], 25)
-    //                    .padding([.top, .bottom], 5)
-    //                
-    //                HStack{
-    //                    Image(systemName: "gearshape.fill")
-    //                        .font(.system(size: 20))
-    //                        .padding([.trailing], 10)
-    //                    Text("Configuración")
-    //                        .font(.body)
-    //                    Spacer(minLength: 0)
-    //                }
+                        .padding([.top], 16)
+
                         
                     Spacer()
                         
@@ -67,6 +50,7 @@ struct Sheet: View {
                 .padding([.leading, .trailing], 25)
                     
             }.background(Color("sheet").ignoresSafeArea(.all))
+            .preferredColorScheme(offline ? .dark : colorScheme)
     
     }
     
@@ -75,7 +59,7 @@ struct Sheet: View {
 struct sheetView_Previews: PreviewProvider {
     static var previews: some View {
         
-            Sheet()
+        Sheet()
             .previewLayout(.sizeThatFits)
 
   

@@ -193,9 +193,10 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		0044BEAE2A941C7A00C2CED9 /* Discards */ = {
+		0044BEAE2A941C7A00C2CED9 /* Discards and Backups */ = {
 			isa = PBXGroup;
 			children = (
+				00CDF8DC295E3D1E00171947 /* SearchbarPrototype.swift */,
 				0079F76029B11907009E8DB1 /* RecentlySearched.swift */,
 				005966D02ABA4B9500A40312 /* ViewEntities.swift */,
 				0079F75E29B1137D009E8DB1 /* recentlySearched.swift */,
@@ -234,7 +235,7 @@
 				001A08A22A994F42009B36CC /* Backups */,
 				0098933A2AD9CD9000DEFEDA /* Searchbarfix.swift */,
 			);
-			path = Discards;
+			path = "Discards and Backups";
 			sourceTree = "<group>";
 		};
 		0044BEAF2A941CAD00C2CED9 /* CoreData */ = {
@@ -321,7 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				00CDF8E0295E3DBB00171947 /* Extensions */,
-				0044BEAE2A941C7A00C2CED9 /* Discards */,
+				0044BEAE2A941C7A00C2CED9 /* Discards and Backups */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -372,7 +373,6 @@
 				0044BD7129CCF3D300765261 /* ShareIcon.swift */,
 				0049CF5C29CC065D00DA8F53 /* HomeHeader.swift */,
 				00466C4629842AC400D8DBDC /* Sheet.swift */,
-				00CDF8DC295E3D1E00171947 /* SearchbarPrototype.swift */,
 				001A089C2A994A46009B36CC /* SearchBar.swift */,
 				000DDE042AD4BFFE00074AFD /* Heart.swift */,
 				009893402AD9D19E00DEFEDA /* Xmark.swift */,

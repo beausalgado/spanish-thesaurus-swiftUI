@@ -24,35 +24,25 @@ struct SearchTab: View {
             SearchBar(searchText: $searchText, isFocused: $isFocused, showAutocomplete: $showAutocomplete, showResult: $showResult, stillShowResult: $stillShowResult)
             
             ScrollView {
-                
-                if searchText.isEmpty  {
-                    recentlysearched.padding([.top])
-                }
-                
-                if showAutocomplete && !searchText.isEmpty {
-                    autocompleteresults.padding([.top])
-                }
-                
-                if showResult {
-                    result.padding([.top])
-                }
-                
-              //  Spacer()
-            
-                
-   //             Group {
-     //               Text(searchText)
-//
-//                    Text("showAutocomplete: \(showAutocomplete.description)")
-//                    Text("showResult: \(showResult.description)")
-//                    Text("isFocused: \(isFocused.description)")
-//                    Text("tapped: \(stillShowResult.description)")
-//                    Text("vm: \(vm.words.count)")
-//                    Text("vm: \(vm.words.description)")
-                 
-                  
-     //           }
-            }.padding([.leading, .trailing], 30)
+                VStack {
+                    
+                    if searchText.isEmpty  {
+                        recentlysearched.padding([.top])
+                    }
+                    
+                    if showAutocomplete && !searchText.isEmpty {
+                        autocompleteresults.padding([.top])
+                    }
+                    
+                    if showResult {
+                        result.padding([.top])
+                    }
+                    
+                    
+    
+        
+                }.padding([.leading, .trailing], 30)
+            }
                 
         }
     }
@@ -71,17 +61,26 @@ extension SearchTab {
     private var result: some View {
         VStack {
             
-            if let filterVM = vm.words.first(where: { $0.entry.lowercased() == searchText.lowercased() }) {
-                ZStack {
-                    EntryRow(data: filterVM)
-                }.onAppear {
-                    stillShowResult = false
-                }
-                
+            if vm.isLoading {
+                ProgressView()
             } else {
                 
-     ErrorPage(palabraNoEncontrada: $searchText)
-                   
+                if let filterVM = vm.words.first(where: { $0.entry.lowercased() == searchText.lowercased() }) {
+                    ZStack {
+                        EntryRow(data: filterVM)
+                    }.onAppear {
+                        stillShowResult = false
+                    }
+                    
+                }
+                
+                else
+                    
+                {
+                    ErrorPage(palabraNoEncontrada: $searchText)
+                
+                }
+                
             }
         }
     }
@@ -174,7 +173,7 @@ extension SearchTab {
                             Spacer()
                             
                         }
-                      //  .background(Color.blue)
+                        .background(Color.white.opacity(0.001))
                         .onTapGesture {
                             searchText = entity.entry ?? ""
                             showAutocomplete = false

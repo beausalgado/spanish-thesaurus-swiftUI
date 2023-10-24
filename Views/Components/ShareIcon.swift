@@ -9,25 +9,12 @@ import SwiftUI
 
 struct ShareIcon: View {
     
-    @State var likedFill: Bool = false
-    @State var clicked: Bool = false
-    @State var liked: Bool = false
     let link = URL(string: "https://www.hackingwithswift.com")!
-    
-    //https://www.appcoda.com/swiftui-sharelink/
+
     
     var body: some View {
         HStack {
-            
-//                                Image(systemName: clicked ?  "square.and.arrow.up.fill" : "square.and.arrow.up")
-//                                    .font(.system(size: 20))
-//                                    .foregroundColor(.black)
-//
-//                                    .onTapGesture {
-//                                        withAnimation(.default) {
-//                                            self.clicked.toggle()
-//                                        }}
-//            
+                 
             ZStack {
                 Rectangle()
                     .fill(.white)
@@ -35,8 +22,7 @@ struct ShareIcon: View {
                     .opacity(0.01)
                     
                     
-                
-       //      Text("\(liked.description)")
+
 
     ShareLink(item: link) {
         Image(systemName: "square.and.arrow.up")
@@ -51,15 +37,6 @@ struct ShareIcon: View {
 
                     
 
-                
-    //                    Image(systemName: clicked ?  "square.and.arrow.up.fill" : "square.and.arrow.up")
-    //                        .font(.system(size: 20))
-    //                        .foregroundColor(.black)
-    //                        .onTapGesture {
-    //                    withAnimation(.default) {
-    //                        self.clicked.toggle()
-    //                    }
-    //                }
 
             }
         }

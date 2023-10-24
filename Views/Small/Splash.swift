@@ -24,7 +24,7 @@ struct Splash: View {
                         .frame(width: 80, height: 80)
                         .opacity(opacity ? 1.0 : 0.0)
                      //   .scaleEffect(size)
-                       // .rotationEffect(.degrees(rotating))
+                       // 
                         .onAppear {
                             withAnimation(.easeIn(duration: 1.6)) {
                                   self.opacity = true

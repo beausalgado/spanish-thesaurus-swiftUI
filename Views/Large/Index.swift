@@ -9,8 +9,6 @@ import SwiftUI
 
 struct Index: View {
     
-    // searxg terms: afectado,afirmar, apestar, aplastar
-    // https://medium.com/@konuralpdemirtas/in-xcode-13-swift-5-adding-core-data-to-existing-project-757d2db3fe31
    @State private var splashView: Bool = true
     
     var body: some View {
