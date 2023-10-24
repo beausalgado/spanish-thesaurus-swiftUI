@@ -189,7 +189,7 @@ extension FavoritesTab {
             })
             .sheet(isPresented: $showSheet) {
                 Sheet()
-                    .presentationDetents([ .fraction(0.30)])
+                    .presentationDetents([ .fraction(0.60)])
 
                 
             }

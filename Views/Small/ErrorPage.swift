@@ -8,16 +8,29 @@
 import SwiftUI
 
 struct ErrorPage: View {
-    @Binding var palabraNoEncontrada: String
     var body: some View {
-            Text("No se encuentra la palabra: \(palabraNoEncontrada)")
+        VStack {
+            Spacer()
+            Image( "brontosaurus")
+                .resizable()
+                .frame(width: 90, height: 90)
+                //.padding([.leading], 20)
+                .opacity(0.20)
+                .padding([.bottom], 1)
+            Text("Lo lamentamos")
+                .font(.custom("Nunito", size: 20, relativeTo: .body))
+                .fontWeight(.bold)
+            Text("No pudimos encontrar esa palabra")
+                .font(.custom("Nunito", size: 18, relativeTo: .body))
+            Spacer()
+        }
 
      
     }
 }
 
 #Preview {
-    ErrorPage(palabraNoEncontrada: .constant("gagaga"))
+    ErrorPage()
 }
 
 

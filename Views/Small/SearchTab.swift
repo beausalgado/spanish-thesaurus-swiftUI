@@ -77,7 +77,7 @@ extension SearchTab {
                 else
                     
                 {
-                    ErrorPage(palabraNoEncontrada: $searchText)
+                    ErrorPage()
                 
                 }
                 

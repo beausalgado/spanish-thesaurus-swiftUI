@@ -59,47 +59,47 @@ struct Home_Previews: PreviewProvider {
     }
 }
 
-extension HomeTab {
-    private var synonymOfTheDay: some View {
-        ZStack {
-            Rectangle()
-                //.frame(width: 350, height: 160)
-                .cornerRadius(16)
-                .foregroundColor(Color("offwhite"))
-                .shadow(color: .black.opacity(0.1),
-                        radius: 5.0,
-                        x: 0.0,
-                        y: 5.0
-                )
-                                 
-            VStack(alignment: .leading, spacing:0){
-                HStack {
-                    Text("atizar")
-                        .font(.custom("Nunito", size: 32, relativeTo: .title))
-                        .fontWeight(.bold)
-                    Spacer()
-                    Image(systemName: "arrow.right")
-                        .font(.system(size: 16))
-                        .background(
-                        Circle()
-                            .fill(Color("buttongray"))
-                            .frame(width: 28, height: 28)
-                        )
-                }
-                
-                Text("verbo")
-                    .font(.custom("Nunito", size: 14, relativeTo: .body))
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color("gray"))
-                    .padding([.bottom], 10)
-                Text("Avivar, excitar, estimular, activar, remover, azuzar, aguijonear...")
-                    .font(.custom("Nunito", size: 16, relativeTo: .body))
-                Spacer()
-            }.padding( )
-        
-
-        }//.frame(width: 350, height: 160)
-        
-    }
-}
-
+//extension HomeTab {
+//    private var synonymOfTheDay: some View {
+//        ZStack {
+//            Rectangle()
+//                //.frame(width: 350, height: 160)
+//                .cornerRadius(16)
+//                .foregroundColor(Color("offwhite"))
+//                .shadow(color: .black.opacity(0.1),
+//                        radius: 5.0,
+//                        x: 0.0,
+//                        y: 5.0
+//                )
+//                                 
+//            VStack(alignment: .leading, spacing:0){
+//                HStack {
+//                    Text("atizar")
+//                        .font(.custom("Nunito", size: 32, relativeTo: .title))
+//                        .fontWeight(.bold)
+//                    Spacer()
+//                    Image(systemName: "arrow.right")
+//                        .font(.system(size: 16))
+//                        .background(
+//                        Circle()
+//                            .fill(Color("buttongray"))
+//                            .frame(width: 28, height: 28)
+//                        )
+//                }
+//                
+//                Text("verbo")
+//                    .font(.custom("Nunito", size: 14, relativeTo: .body))
+//                    .fontWeight(.semibold)
+//                    .foregroundColor(Color("gray"))
+//                    .padding([.bottom], 10)
+//                Text("Avivar, excitar, estimular, activar, remover, azuzar, aguijonear...")
+//                    .font(.custom("Nunito", size: 16, relativeTo: .body))
+//                Spacer()
+//            }.padding( )
+//        
+//
+//        }//.frame(width: 350, height: 160)
+//        
+//    }
+//}
+//

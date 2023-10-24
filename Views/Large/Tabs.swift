@@ -24,26 +24,19 @@ struct Tabs: View {
                 }
                 .tag(0)
 
-            InfoPage()
-                .tabItem {
-                    Image(systemName: "info.circle")
-                    Text("Info")
-                }
-                .tag(1)
-
             FavoritesTab()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Favorites")
                 }
-                .tag(2)
+                .tag(1)
 
             SearchTab()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
-                .tag(3)
+                .tag(2)
 
         }.accentColor(.black)
             .animation(.easeOut(duration: 0.2), value: selectedTab)

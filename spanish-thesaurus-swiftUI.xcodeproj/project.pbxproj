@@ -196,6 +196,7 @@
 		0044BEAE2A941C7A00C2CED9 /* Discards and Backups */ = {
 			isa = PBXGroup;
 			children = (
+				000F0E1A2AE1ABFA00AA1505 /* InfoPage.swift */,
 				00CDF8DC295E3D1E00171947 /* SearchbarPrototype.swift */,
 				0079F76029B11907009E8DB1 /* RecentlySearched.swift */,
 				005966D02ABA4B9500A40312 /* ViewEntities.swift */,
@@ -292,7 +293,6 @@
 				0084015C29CBE4D5000B09E9 /* FavoritesTab.swift */,
 				0047687929899A52006A5128 /* Splash.swift */,
 				000F0E182AE1AB2700AA1505 /* ErrorPage.swift */,
-				000F0E1A2AE1ABFA00AA1505 /* InfoPage.swift */,
 			);
 			path = Small;
 			sourceTree = "<group>";
