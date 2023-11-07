@@ -1,5 +1,3 @@
-# spanish-thesaurus-swiftUI
-
 # Ideating 
 First, I brainstormed ideas of what I wanted the app to look like and have. Then I created the design.  I downloaded a number of dictionary and thesaurus apps to research, savings screenshots of features and designs that I liked in Notion. I used Figma to create six iterations of wireframes. This includes color schemes and various logos. For instance, the search bar design and functionality is based largely on Instagram’s search bar.  I create a hifi version with the help of a professional designer.
 
